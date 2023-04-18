@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCL_PENG_AZOAI_SDK_V1_CONFIG</CLSNAME>
+    <LANGU>E</LANGU>
+    <DESCRIPT>MSPENG:Azure OpenAI ABAP SDK Config</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>_LOAD_SUPPORTED_AUTHSTRATEGIES</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Load supported Auth Strategies.</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>_LOAD_SUPPORTED_VERSIONS</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Load supported versions</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>_SET_API_BASE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Sets the API Base URL</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>_SET_API_VERSION</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Sets the API version into config object</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>_SET_AUTHENTICATION</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Sets Authentication strategy</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+  </asx:values>
+ </asx:abap>
+</abapGit>

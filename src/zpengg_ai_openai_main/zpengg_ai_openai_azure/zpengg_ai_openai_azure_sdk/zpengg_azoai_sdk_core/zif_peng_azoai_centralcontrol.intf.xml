@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_INTF" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOINTERF>
+    <CLSNAME>ZIF_PENG_AZOAI_CENTRALCONTROL</CLSNAME>
+    <LANGU>E</LANGU>
+    <DESCRIPT>MSPENG: Interface for Central Control</DESCRIPT>
+    <EXPOSURE>2</EXPOSURE>
+    <STATE>1</STATE>
+    <UNICODE>X</UNICODE>
+   </VSEOINTERF>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>INITIALIZE_SDKCOMPONENT</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Check if an SDK component is permitted</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>PERFORM_OPERATION</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Check if a specific operation on a component is permitted</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>START_SDK</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Check if SDK use is permitted</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>INITIALIZE_SDKCOMPONENT</CMPNAME>
+     <SCONAME>COMPONENT_TYPE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Component Type</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>PERFORM_OPERATION</CMPNAME>
+     <SCONAME>COMPONENT_TYPE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Component Type</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>PERFORM_OPERATION</CMPNAME>
+     <SCONAME>OPERATION</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Operation to be performed</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>START_SDK</CMPNAME>
+     <SCONAME>API_BASE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>API Base URL</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>START_SDK</CMPNAME>
+     <SCONAME>API_TYPE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>API Type</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>START_SDK</CMPNAME>
+     <SCONAME>API_VERSION</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>API Version</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>START_SDK</CMPNAME>
+     <SCONAME>INIT_PARAMS</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Other Initialization Parameters</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

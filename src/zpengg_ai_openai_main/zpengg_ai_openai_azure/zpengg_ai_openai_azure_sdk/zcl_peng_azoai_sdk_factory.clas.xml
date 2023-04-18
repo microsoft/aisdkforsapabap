@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCL_PENG_AZOAI_SDK_FACTORY</CLSNAME>
+    <LANGU>E</LANGU>
+    <DESCRIPT>MSPENG:Azure Open AI ABAP SDK Factory</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>INTERNAL ONLY - Constructor</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_INSTANCE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns an instance of AZOAI SDK Factory</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_SDK</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns an SDK instance appropriate for the version</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_SDK</CMPNAME>
+     <SCONAME>API_BASE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>API Base URL</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_SDK</CMPNAME>
+     <SCONAME>API_KEY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>API Key</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_SDK</CMPNAME>
+     <SCONAME>API_TYPE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>API Type</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_SDK</CMPNAME>
+     <SCONAME>API_VERSION</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>API Version</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_SDK</CMPNAME>
+     <SCONAME>PARAMS</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Additional parameters as specified by organization policies</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_SDK</CMPNAME>
+     <SCONAME>SDK</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Instance of SDK</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_SDK</CMPNAME>
+     <SCONAME>SDKPROFILE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SDK Profile ID as provided by organization SDK administrator</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_SDK</CMPNAME>
+     <SCONAME>ZCX_PENG_AZOAI_SDK_EXCEPTION</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Exception if SDK creation failed.</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>
