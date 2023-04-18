@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_INTF" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOINTERF>
+    <CLSNAME>ZIF_PENG_AZOAI_SDK_COMP_FINTUN</CLSNAME>
+    <LANGU>E</LANGU>
+    <DESCRIPT>MSPENG: Azure Open AI SDK - FineTune Component</DESCRIPT>
+    <EXPOSURE>2</EXPOSURE>
+    <STATE>1</STATE>
+    <UNICODE>X</UNICODE>
+   </VSEOINTERF>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>CANCEL</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Cancels the processing of the fine-tune job</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CREATE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a job that fine-tunes a specified model</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DELETE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Deletes the fine-tune job</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Gets details for a single fine-tune job</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_EVENTS</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Gets the events for the fine-tune job</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>LIST</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Gets a list of all fine-tune jobs</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>CANCEL</CMPNAME>
+     <SCONAME>ERROR</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>ABAP Ready error details</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CANCEL</CMPNAME>
+     <SCONAME>FINETUNEID</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>The identifier of the fine-tune job</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CANCEL</CMPNAME>
+     <SCONAME>FINETUNE_CANCELLED</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>ABAP Ready fine-tune cancellation details</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CANCEL</CMPNAME>
+     <SCONAME>JSON</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>JSON string with information about operation</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CANCEL</CMPNAME>
+     <SCONAME>STATUSCODE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Status Code</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CANCEL</CMPNAME>
+     <SCONAME>STATUSREASON</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Status Reason</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE</CMPNAME>
+     <SCONAME>ERROR</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>ABAP Ready error details</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE</CMPNAME>
+     <SCONAME>FINETUNE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>ABAP ready fine tune details</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE</CMPNAME>
+     <SCONAME>FINETUNE_CREATE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Parameters for creating a new fine-tune job</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE</CMPNAME>
+     <SCONAME>JSON</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>JSON string with information about operation</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE</CMPNAME>
+     <SCONAME>STATUSCODE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Status Code</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE</CMPNAME>
+     <SCONAME>STATUSREASON</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Status Reason</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DELETE</CMPNAME>
+     <SCONAME>ERROR</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>ABAP Ready error details</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DELETE</CMPNAME>
+     <SCONAME>FINETUNEID</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>The identifier of the fine-tune job</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DELETE</CMPNAME>
+     <SCONAME>JSON</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>JSON string with information about operation</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DELETE</CMPNAME>
+     <SCONAME>STATUSCODE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Status Code</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DELETE</CMPNAME>
+     <SCONAME>STATUSREASON</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Status Reason</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET</CMPNAME>
+     <SCONAME>ERROR</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>ABAP Ready error details</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET</CMPNAME>
+     <SCONAME>FINETUNE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>ABAP ready fine tune details</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET</CMPNAME>
+     <SCONAME>FINETUNEID</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>The identifier of the fine-tune job</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET</CMPNAME>
+     <SCONAME>JSON</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>JSON string with information about operation</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET</CMPNAME>
+     <SCONAME>STATUSCODE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Status Code</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET</CMPNAME>
+     <SCONAME>STATUSREASON</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Status Reason</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_EVENTS</CMPNAME>
+     <SCONAME>ERROR</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>ABAP Ready error details</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_EVENTS</CMPNAME>
+     <SCONAME>FINETUNEID</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>The identifier of the fine-tune job</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_EVENTS</CMPNAME>
+     <SCONAME>FINETUNE_EVENTS</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>ABAP Ready list of fine-tune job events</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_EVENTS</CMPNAME>
+     <SCONAME>JSON</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>JSON string with information about operation</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_EVENTS</CMPNAME>
+     <SCONAME>STATUSCODE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Status Code</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_EVENTS</CMPNAME>
+     <SCONAME>STATUSREASON</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Status Reason</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LIST</CMPNAME>
+     <SCONAME>ERROR</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>ABAP Ready error details</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LIST</CMPNAME>
+     <SCONAME>FINETUNE_LIST</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>ABAP Ready list of fine-tune jobs</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LIST</CMPNAME>
+     <SCONAME>JSON</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>JSON string with information about operation</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LIST</CMPNAME>
+     <SCONAME>STATUSCODE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Status Code</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LIST</CMPNAME>
+     <SCONAME>STATUSREASON</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Status Reason</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

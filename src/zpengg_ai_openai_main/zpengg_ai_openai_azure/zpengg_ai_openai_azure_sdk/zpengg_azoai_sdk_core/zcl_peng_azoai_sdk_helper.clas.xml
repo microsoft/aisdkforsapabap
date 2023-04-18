@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCL_PENG_AZOAI_SDK_HELPER</CLSNAME>
+    <LANGU>E</LANGU>
+    <DESCRIPT>MSPENG:AZOAISDK Helper Class (INTERNAL USE ONLY)</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>DO_RECEIVE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Retrieve the returned data from REST Endpoint communications</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_COMPONENTS_FOR_VERSION</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Gets the components to be initiated for a given version.</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_HTTPOBJS_FROM_URIPATTERN</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Generate and return HTTP communication objects</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_INSTANCE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates or reuse an instance of helper class and returns it.</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>RAISE_FEATURE_NOTIMPL_EX</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Raises an exception indicating feature was not implemented.</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>DO_RECEIVE</CMPNAME>
+     <SCONAME>IOV_ERROR</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Error Data (Populated when API call failed at the server)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DO_RECEIVE</CMPNAME>
+     <SCONAME>IOV_RESULT</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Result data (populated when API call was successful)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DO_RECEIVE</CMPNAME>
+     <SCONAME>IVOBJ_HTTP_CLIENT</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>HTTP Client Object</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DO_RECEIVE</CMPNAME>
+     <SCONAME>IVOBJ_HTTP_REST</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>HTTP Rest Object</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DO_RECEIVE</CMPNAME>
+     <SCONAME>OV_JSONSTRING</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returned JSON String</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DO_RECEIVE</CMPNAME>
+     <SCONAME>OV_STATUSCODE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Status Code</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DO_RECEIVE</CMPNAME>
+     <SCONAME>OV_STATUSDESCR</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Status Description</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_HTTPOBJS_FROM_URIPATTERN</CMPNAME>
+     <SCONAME>IVOBJ_CONFIG</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>SDK Configuration instance</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_HTTPOBJS_FROM_URIPATTERN</CMPNAME>
+     <SCONAME>IVT_TEMPLATECOMPONENTS</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>URI Template components used to construct the full URL</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_HTTPOBJS_FROM_URIPATTERN</CMPNAME>
+     <SCONAME>OVOBJ_HTTP</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>HTTP Object</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_HTTPOBJS_FROM_URIPATTERN</CMPNAME>
+     <SCONAME>OVOBJ_HTTP_REST</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>HTTP REST object</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_HTTPOBJS_FROM_URIPATTERN</CMPNAME>
+     <SCONAME>OV_URL</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Resolved URL constructed from uri template and components</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_HTTPOBJS_FROM_URIPATTERN</CMPNAME>
+     <SCONAME>URI_PATTERN</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>URI Pattern of the REST end point</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_INSTANCE</CMPNAME>
+     <SCONAME>R_RESULT</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Instance of Helper Class</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

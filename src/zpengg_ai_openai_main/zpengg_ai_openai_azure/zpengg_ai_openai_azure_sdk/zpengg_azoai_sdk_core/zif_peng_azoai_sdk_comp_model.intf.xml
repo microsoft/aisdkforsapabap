@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_INTF" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOINTERF>
+    <CLSNAME>ZIF_PENG_AZOAI_SDK_COMP_MODEL</CLSNAME>
+    <LANGU>E</LANGU>
+    <DESCRIPT>MSPENG:Azure Open AI SDK - Model Component</DESCRIPT>
+    <EXPOSURE>2</EXPOSURE>
+    <STATE>1</STATE>
+    <UNICODE>X</UNICODE>
+   </VSEOINTERF>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>GET</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Get details of a single model.</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>LIST</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>List all models available</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>GET</CMPNAME>
+     <SCONAME>IV_MODELID</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Model ID</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET</CMPNAME>
+     <SCONAME>OV_ERROR</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>ABAP ready error details</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET</CMPNAME>
+     <SCONAME>OV_JSON</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>JSON string with information about deployment, or error.</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET</CMPNAME>
+     <SCONAME>OV_MODEL</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>ABAP ready model details.</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET</CMPNAME>
+     <SCONAME>OV_STATUSCODE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Status Code</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET</CMPNAME>
+     <SCONAME>OV_STATUSREASON</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Status Description</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LIST</CMPNAME>
+     <SCONAME>OV_ERROR</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>ABAP ready error details</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LIST</CMPNAME>
+     <SCONAME>OV_JSON</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>JSON string with information about deployment, or error.</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LIST</CMPNAME>
+     <SCONAME>OV_MODEL</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>ABAP ready model list.</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LIST</CMPNAME>
+     <SCONAME>OV_STATUSCODE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Status Code</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LIST</CMPNAME>
+     <SCONAME>OV_STATUSREASON</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Status Description</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_INTF" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOINTERF>
+    <CLSNAME>ZIF_PENG_AZOAI_SDK_COMP_FILES</CLSNAME>
+    <LANGU>E</LANGU>
+    <DESCRIPT>MSPENG: Azure Open AI SDK - Files Component</DESCRIPT>
+    <EXPOSURE>2</EXPOSURE>
+    <STATE>1</STATE>
+    <UNICODE>X</UNICODE>
+   </VSEOINTERF>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>DELETE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Deletes the file</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Gets details for a single file</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_CONTENT</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Gets the content of the file specified by the given file-id</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>IMPORT</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates new file by importing data from a provided url</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>LIST</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Gets a list of all files</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>UPLOAD</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates a new file entity by uploading data</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>DELETE</CMPNAME>
+     <SCONAME>ERROR</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>ABAP Ready error details</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DELETE</CMPNAME>
+     <SCONAME>FILEID</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>The identifier of the file.</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DELETE</CMPNAME>
+     <SCONAME>JSON</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>JSON string with information about operation</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DELETE</CMPNAME>
+     <SCONAME>STATUSCODE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Status Code</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DELETE</CMPNAME>
+     <SCONAME>STATUSREASON</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Status Description</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET</CMPNAME>
+     <SCONAME>ERROR</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>ABAP Ready error details</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET</CMPNAME>
+     <SCONAME>FILE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>ABAP Ready File Information</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET</CMPNAME>
+     <SCONAME>FILEID</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>The identifier of the file.</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET</CMPNAME>
+     <SCONAME>JSON</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>JSON string with information about operation</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET</CMPNAME>
+     <SCONAME>STATUSCODE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Status Code</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET</CMPNAME>
+     <SCONAME>STATUSREASON</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Status Description</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_CONTENT</CMPNAME>
+     <SCONAME>CONTENT</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Content of the file</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_CONTENT</CMPNAME>
+     <SCONAME>ERROR</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>ABAP Ready error details</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_CONTENT</CMPNAME>
+     <SCONAME>FILEID</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>The identifier of the file.</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_CONTENT</CMPNAME>
+     <SCONAME>STATUSCODE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Status Code</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_CONTENT</CMPNAME>
+     <SCONAME>STATUSREASON</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Status Description</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>IMPORT</CMPNAME>
+     <SCONAME>ERROR</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>ABAP Ready error details</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>IMPORT</CMPNAME>
+     <SCONAME>FILE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>ABAP Ready File Information</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>IMPORT</CMPNAME>
+     <SCONAME>IMPORT_INFO</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Import Information</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>IMPORT</CMPNAME>
+     <SCONAME>JSON</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>JSON string with information about operation</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>IMPORT</CMPNAME>
+     <SCONAME>STATUSCODE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Status Code</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>IMPORT</CMPNAME>
+     <SCONAME>STATUSREASON</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Status Description</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LIST</CMPNAME>
+     <SCONAME>ERROR</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>ABAP Ready error details</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LIST</CMPNAME>
+     <SCONAME>FILELIST</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>ABAP Ready list of files</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LIST</CMPNAME>
+     <SCONAME>JSON</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>JSON string with information about operation</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LIST</CMPNAME>
+     <SCONAME>STATUSCODE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Status Code</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LIST</CMPNAME>
+     <SCONAME>STATUSREASON</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Status Description</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>UPLOAD</CMPNAME>
+     <SCONAME>ERROR</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>ABAP Ready error details</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>UPLOAD</CMPNAME>
+     <SCONAME>FILE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>ABAP Ready file information</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>UPLOAD</CMPNAME>
+     <SCONAME>FILENAME</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Name of file if upload is successful</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>UPLOAD</CMPNAME>
+     <SCONAME>JSON</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>JSON string with information about operation</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>UPLOAD</CMPNAME>
+     <SCONAME>JSONLDATA</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>JSONL data to upload</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>UPLOAD</CMPNAME>
+     <SCONAME>STATUSCODE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Status Code</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>UPLOAD</CMPNAME>
+     <SCONAME>STATUSREASON</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Status Description</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>
