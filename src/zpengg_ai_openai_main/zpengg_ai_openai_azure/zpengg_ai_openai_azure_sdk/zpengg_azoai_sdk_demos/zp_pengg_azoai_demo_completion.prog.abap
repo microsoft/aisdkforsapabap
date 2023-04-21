@@ -166,7 +166,7 @@ MODULE pai INPUT.
 
       APPEND str_input TO completions_input-prompt.
       completions_input-max_tokens = p_length.
-*      break gonair.
+
       sdk_instance->completions( )->create(
       EXPORTING
         deploymentid = p_depid
@@ -178,7 +178,7 @@ MODULE pai INPUT.
         response     = completions_output
         error        = error
     ).
-*break gonair.
+
       LOOP AT completions_output-choices ASSIGNING FIELD-SYMBOL(<fs_outputtext>).
         str_output = |{ str_output }{ <fs_outputtext>-text }|.
       ENDLOOP.
