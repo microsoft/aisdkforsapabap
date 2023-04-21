@@ -95,58 +95,64 @@ ENDCLASS.
 
 
 
-CLASS zcl_peng_azoai_sdk_helper IMPLEMENTATION.
+CLASS ZCL_PENG_AZOAI_SDK_HELPER IMPLEMENTATION.
 
 
-  METHOD get_instance.
+  METHOD do_receive.
 *****************************************************************************************************************
 * Class          : ZCL_PENG_AZOAI_SDK_HELPER
-* Method         : get_instance
+* Method         : do_receive
 * Created by     : Gopal Nair
 * Date           : Apr 6, 2023
 *-------------------------------------------------------------------------------------------------------------
 * Description
 *-------------------------------------------------------------------------------------------------------------
-* Creates or reuse an instance of helper class and returns it.
+* INTERNAL USE ONLY
 *
-* This method implements a singleton pattern. When requested for the first time, the method creates a new instance
-* of this helper class. Future requests will return this already created instance.
+* Retrieve the returned data from REST Endpoint communications.
 *-------------------------------------------------------------------------------------------------------------
 *                       Modification History
 *-------------------------------------------------------------------------------------------------------------
 * Apr 6, 2023 // Gopal Nair // Initial Version
 *****************************************************************************************************************
-*   Singleton pattern - only 1 instance of helper is needed in entire SDK.
-    IF _instance IS INITIAL.
-      CREATE OBJECT _instance.
-    ENDIF.
-    r_result = _instance.
-  ENDMETHOD.
+*   Get status and description.
+    ivobj_http_client->response->get_status(
+      IMPORTING
+        code   = ov_statuscode                 " HTTP status code
+        reason = ov_statusdescr                 " HTTP status description
+    ).
+
+    ov_jsonstring = ivobj_http_rest->if_rest_client~get_response_entity( )->get_string_data( ).
 
 
-  METHOD raise_feature_notimpl_ex.
-*****************************************************************************************************************
-* Class          : ZCL_PENG_AZOAI_SDK_HELPER
-* Method         : raise_feature_notimpl_ex
-* Created by     : Gopal Nair
-* Date           : Apr 6, 2023
-*-------------------------------------------------------------------------------------------------------------
-* Description
-*-------------------------------------------------------------------------------------------------------------
-* Raises an exception indicating feature was not implemented.
-*
-* As this SDK supports different AI engines, there may be features that are not available in certain engines.
-* Further, there may be features available in a newer version, but missing from older versions. This method is
-* called during request processing, when such situations occur - and will raise an exception.
-*-------------------------------------------------------------------------------------------------------------
-*                       Modification History
-*-------------------------------------------------------------------------------------------------------------
-* Apr 6, 2023 // Gopal Nair // Initial Version
-*****************************************************************************************************************
-    RAISE EXCEPTION TYPE zcx_peng_azoai_sdk_exception
-      EXPORTING
-        textid = zcx_peng_azoai_sdk_exception=>not_implemented.
+*   NOTE : The below commented code is for internal debugging purposes.
+*    BREAK-POINT.
+*    " Generate dynamic structure to suit the data
+*    DATA(lmsg_data) = /ui2/cl_json=>generate( json = ov_jsonstring ).
+*    ASSIGN lmsg_data->* TO FIELD-SYMBOL(<l_msg_data>).
+*    " Deserialize the JSON string into the matching deep datatype
+*    /ui2/cl_json=>deserialize( EXPORTING json = ov_jsonstring pretty_name = /ui2/cl_json=>pretty_mode-camel_case CHANGING data = <l_msg_data> ).
+
+
+*   Attempt to populate interaction structures (success/error). The mapping automatically will fail for the incorrect ones....
+*   We are using this strategy here, as opposed to checking status code, since the status code can vary even within a range (eg: 200 - ok, 201 - created...etc). ... so, this simplifies things.
+
+    /ui2/cl_json=>deserialize(
+                                EXPORTING
+                                  json             =  ov_jsonstring   " JSON string
+                                CHANGING
+                                  data             =  iov_result  " Data to serialize
+                                ).
+
+    /ui2/cl_json=>deserialize(
+                                  EXPORTING
+                                    json             =  ov_jsonstring   " JSON string
+                                  CHANGING
+                                    data             =  iov_error  " Data to serialize
+                             ).
+
   ENDMETHOD.
+
 
   METHOD get_components_for_version.
 *****************************************************************************************************************
@@ -238,6 +244,7 @@ CLASS zcl_peng_azoai_sdk_helper IMPLEMENTATION.
 
   ENDMETHOD.
 
+
   METHOD get_httpobjs_from_uripattern.
 *****************************************************************************************************************
 * Class          : ZCL_PENG_AZOAI_SDK_HELPER
@@ -279,12 +286,12 @@ CLASS zcl_peng_azoai_sdk_helper IMPLEMENTATION.
         argument_not_found         = 1                " Communication parameter (host or service) not available
         plugin_not_active          = 2                " HTTP/HTTPS communication not available
         internal_error             = 3                " Internal error (e.g. name too long)
-        oa2c_set_token_error       = 4                " General error when setting the OAuth token
-        oa2c_missing_authorization = 5
-        oa2c_invalid_config        = 6
-        oa2c_invalid_parameters    = 7
-        oa2c_invalid_scope         = 8
-        oa2c_invalid_grant         = 9
+*        oa2c_set_token_error       = 4                " General error when setting the OAuth token
+*        oa2c_missing_authorization = 5
+*        oa2c_invalid_config        = 6
+*        oa2c_invalid_parameters    = 7
+*        oa2c_invalid_scope         = 8
+*        oa2c_invalid_grant         = 9
         OTHERS                     = 10
     ).
     IF sy-subrc <> 0.
@@ -305,59 +312,54 @@ CLASS zcl_peng_azoai_sdk_helper IMPLEMENTATION.
 
   ENDMETHOD.
 
-  METHOD do_receive.
+
+  METHOD get_instance.
 *****************************************************************************************************************
 * Class          : ZCL_PENG_AZOAI_SDK_HELPER
-* Method         : do_receive
+* Method         : get_instance
 * Created by     : Gopal Nair
 * Date           : Apr 6, 2023
 *-------------------------------------------------------------------------------------------------------------
 * Description
 *-------------------------------------------------------------------------------------------------------------
-* INTERNAL USE ONLY
+* Creates or reuse an instance of helper class and returns it.
 *
-* Retrieve the returned data from REST Endpoint communications.
+* This method implements a singleton pattern. When requested for the first time, the method creates a new instance
+* of this helper class. Future requests will return this already created instance.
 *-------------------------------------------------------------------------------------------------------------
 *                       Modification History
 *-------------------------------------------------------------------------------------------------------------
 * Apr 6, 2023 // Gopal Nair // Initial Version
 *****************************************************************************************************************
-*   Get status and description.
-    ivobj_http_client->response->get_status(
-      IMPORTING
-        code   = ov_statuscode                 " HTTP status code
-        reason = ov_statusdescr                 " HTTP status description
-    ).
-
-    ov_jsonstring = ivobj_http_rest->if_rest_client~get_response_entity( )->get_string_data( ).
-
-
-*   NOTE : The below commented code is for internal debugging purposes.
-*    BREAK-POINT.
-*    " Generate dynamic structure to suit the data
-*    DATA(lmsg_data) = /ui2/cl_json=>generate( json = ov_jsonstring ).
-*    ASSIGN lmsg_data->* TO FIELD-SYMBOL(<l_msg_data>).
-*    " Deserialize the JSON string into the matching deep datatype
-*    /ui2/cl_json=>deserialize( EXPORTING json = ov_jsonstring pretty_name = /ui2/cl_json=>pretty_mode-camel_case CHANGING data = <l_msg_data> ).
-
-
-*   Attempt to populate interaction structures (success/error). The mapping automatically will fail for the incorrect ones....
-*   We are using this strategy here, as opposed to checking status code, since the status code can vary even within a range (eg: 200 - ok, 201 - created...etc). ... so, this simplifies things.
-
-    /ui2/cl_json=>deserialize(
-                                EXPORTING
-                                  json             =  ov_jsonstring   " JSON string
-                                CHANGING
-                                  data             =  iov_result  " Data to serialize
-                                ).
-
-    /ui2/cl_json=>deserialize(
-                                  EXPORTING
-                                    json             =  ov_jsonstring   " JSON string
-                                  CHANGING
-                                    data             =  iov_error  " Data to serialize
-                             ).
-
+*   Singleton pattern - only 1 instance of helper is needed in entire SDK.
+    IF _instance IS INITIAL.
+      CREATE OBJECT _instance.
+    ENDIF.
+    r_result = _instance.
   ENDMETHOD.
 
+
+  METHOD raise_feature_notimpl_ex.
+*****************************************************************************************************************
+* Class          : ZCL_PENG_AZOAI_SDK_HELPER
+* Method         : raise_feature_notimpl_ex
+* Created by     : Gopal Nair
+* Date           : Apr 6, 2023
+*-------------------------------------------------------------------------------------------------------------
+* Description
+*-------------------------------------------------------------------------------------------------------------
+* Raises an exception indicating feature was not implemented.
+*
+* As this SDK supports different AI engines, there may be features that are not available in certain engines.
+* Further, there may be features available in a newer version, but missing from older versions. This method is
+* called during request processing, when such situations occur - and will raise an exception.
+*-------------------------------------------------------------------------------------------------------------
+*                       Modification History
+*-------------------------------------------------------------------------------------------------------------
+* Apr 6, 2023 // Gopal Nair // Initial Version
+*****************************************************************************************************************
+    RAISE EXCEPTION TYPE zcx_peng_azoai_sdk_exception
+      EXPORTING
+        textid = zcx_peng_azoai_sdk_exception=>not_implemented.
+  ENDMETHOD.
 ENDCLASS.
