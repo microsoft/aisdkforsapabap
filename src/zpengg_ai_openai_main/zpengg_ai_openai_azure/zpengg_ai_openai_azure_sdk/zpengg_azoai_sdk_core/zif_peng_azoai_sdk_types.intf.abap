@@ -117,7 +117,7 @@ INTERFACE zif_peng_azoai_sdk_types
   TYPES:
     BEGIN OF ty_finetune_result,
       created_at       TYPE i,
-      error            TYPE ty_error,
+      error            TYPE zif_peng_azoai_sdk_typinternal=>ty_internal_error_object,
       events           TYPE STANDARD TABLE OF zif_peng_azoai_sdk_typinternal=>ty_int_finetune_event WITH DEFAULT KEY,
       fine_tuned_model TYPE string,
       hyperparams      TYPE zif_peng_azoai_sdk_typinternal=>ty_int_finetune_hyperparams,
@@ -159,8 +159,6 @@ INTERFACE zif_peng_azoai_sdk_types
       object TYPE string,
     END OF ty_finetune_list.
 
-
-
 ************************* Error Data types *******
 *https://github.com/microsoft/api-guidelines/blob/vNext/Guidelines.md#7102-error-condition-responses
   TYPES:
@@ -168,6 +166,8 @@ INTERFACE zif_peng_azoai_sdk_types
       error TYPE zif_peng_azoai_sdk_typinternal=>ty_internal_error_object,
     END OF ty_error,
     tty_error TYPE STANDARD TABLE OF ty_error.
+
+
 
 *************** Types for Internal Use ************************
 
