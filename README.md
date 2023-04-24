@@ -1,8 +1,5 @@
 # Microsoft AI SDK for SAP
 
-## Documentation
-Coming Soon.
-
 ## Contributing
 
 This project welcomes contributions and suggestions.  Most contributions require you to agree to a
