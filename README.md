@@ -1,21 +1,29 @@
 # Microsoft AI SDK for SAP
 
-## Documentation
-Coming Soon.
+## Links
+[Microsoft AI SDK for SAP Documentation](https://microsoft.github.io/aisdkforsapabap/)
+
+[Discussion Forum](https://github.com/microsoft/aisdkforsapabap/discussions)
+
+[Issues/Bug reporting](https://github.com/microsoft/aisdkforsapabap/issues)
+
+> ***Note**: Documentation website is still in progress. Please bookmark the above documentation link for future reference.* 
+
+## What is Microsoft AI SDK for SAP?
+AI SDK for SAP is a software development kit (SDK) designed to provide SAP ABAP developers with the tools needed to create intelligent enterprise applications using artificial intelligence (AI) technologies.
+
+Microsoft AI SDK for SAP ABAP is designed to be user-friendly, with an intuitive interface that allows developers to easily integrate AI capabilities into ABAP applications. Currently in early preview phase and Version 1.0, It provides ability to integrate and use Azure Open AI capabilities. Future versions will expand this capability to include other AI engines.
+
+>*Azure Open AI is a comprehensive set of AI services and tools provided by Microsoft Azure. It includes powerful machine learning algorithms, natural language processing tools, and cognitive services that can be used to build intelligent applications that can recognize patterns, process natural language, and make predictions based on data. Azure Open AI features pre-built AI models and algorithms, as well as tools for custom model training and deployment – [all with strong security, compliance, and data privacy](https://learn.microsoft.com/en-us/legal/cognitive-services/openai/data-privacy?context=%2Fazure%2Fcognitive-services%2Fopenai%2Fcontext%2Fcontext).*
+
+Using AI SDK for SAP ABAP v 1.0 and integrating Azure Open AI with SAP ABAP/SAP business processes, developers can create innovative applications that can automate manual tasks, make smarter business decisions, and provide more personalized customer experiences.
+
 
 ## Contributing
 
-This project welcomes contributions and suggestions.  Most contributions require you to agree to a
-Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
-the rights to use your contribution. For details, visit https://cla.opensource.microsoft.com.
+This project is currently in active development. At this time, suggestions and feature requests are most welcome. Please use the discussion forum for exchanging ideas and brainstorming with the community.
 
-When you submit a pull request, a CLA bot will automatically determine whether you need to provide
-a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions
-provided by the bot. You will only need to do this once across all repos using our CLA.
-
-This project has adopted the [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/).
-For more information see the [Code of Conduct FAQ](https://opensource.microsoft.com/codeofconduct/faq/) or
-contact [opencode@microsoft.com](mailto:opencode@microsoft.com) with any additional questions or comments.
+In future, this project will be open to contributions.
 
 ## Trademarks
 
