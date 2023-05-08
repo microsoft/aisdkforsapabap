@@ -11,6 +11,7 @@ CLASS zcl_peng_azoai_sdk_v1 DEFINITION
       zif_peng_azoai_sdk~model REDEFINITION,
       zif_peng_azoai_sdk~deployments REDEFINITION,
       zif_peng_azoai_sdk~completions REDEFINITION,
+      zif_peng_azoai_sdk~chat_completions REDEFINITION,
       zif_peng_azoai_sdk~files REDEFINITION,
       zif_peng_azoai_sdk~finetunes REDEFINITION.
   PROTECTED SECTION.
@@ -234,6 +235,11 @@ CLASS zcl_peng_azoai_sdk_v1 IMPLEMENTATION.
 *****************************************************************************************************************
     _check_component_safety( component_type = zif_peng_azoai_sdk_constants=>c_component_type-fine_tuning ).
     finetunes ?= _t_subcomponents[ component_type = zif_peng_azoai_sdk_constants=>c_component_type-fine_tuning ]-component_instance..
+  ENDMETHOD.
+
+  METHOD zif_peng_azoai_sdk~chat_completions.
+    _check_component_safety( component_type = zif_peng_azoai_sdk_constants=>c_component_type-chat_completions ).
+    chat_completions ?= _t_subcomponents[ component_type = zif_peng_azoai_sdk_constants=>c_component_type-chat_completions ]-component_instance.
   ENDMETHOD.
 
 ENDCLASS.

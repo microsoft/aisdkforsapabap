@@ -13,15 +13,16 @@ INTERFACE zif_peng_azoai_sdk_constants
 
 *   List of component identifiers/names. This is used internally for interaction and initialization of AI components.
     BEGIN OF c_component_type,
-      sdk         TYPE string VALUE 'SDK',
-      config      TYPE string VALUE 'CONFIG',
-      helper      TYPE string VALUE 'HELPER',
-      model       TYPE string VALUE 'MODEL',
-      deployment  TYPE string VALUE 'DEPLOYMENT',
-      completions TYPE string VALUE 'COMPLETIONS',
-      file        TYPE string VALUE 'FILE',
-      fine_tuning TYPE string VALUE 'FINETUNING',
-      embeddings  TYPE string VALUE 'EMBEDDINGS',
+      sdk              TYPE string VALUE 'SDK',
+      config           TYPE string VALUE 'CONFIG',
+      helper           TYPE string VALUE 'HELPER',
+      model            TYPE string VALUE 'MODEL',
+      deployment       TYPE string VALUE 'DEPLOYMENT',
+      completions      TYPE string VALUE 'COMPLETIONS',
+      chat_completions TYPE string VALUE 'CHAT_COMPLETIONS',
+      file             TYPE string VALUE 'FILE',
+      fine_tuning      TYPE string VALUE 'FINETUNING',
+      embeddings       TYPE string VALUE 'EMBEDDINGS',
     END OF c_component_type,
 
 *   Operations supported by components. NOTE: This is an exhaustive list of operations by all components. Not all operations
@@ -84,6 +85,16 @@ INTERFACE zif_peng_azoai_sdk_constants
 
 *   Central Control Class Name.
     c_central_control_class    TYPE string VALUE 'ZCL_PENG_AZOAI_CENTRALCONTROL',
-    c_sdk_default_profile_name TYPE zde_azoaisdk_profileid VALUE 'DEFAULT'.
+    c_sdk_default_profile_name TYPE zde_azoaisdk_profileid VALUE 'DEFAULT',
+
+    BEGIN OF c_chatcompletion_role,
+      user      TYPE string VALUE 'user',
+      assistant TYPE string VALUE 'assistant',
+      system    TYPE string VALUE 'system',
+    END OF c_chatcompletion_role.
+
+
+
+
 
 ENDINTERFACE.

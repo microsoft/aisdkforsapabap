@@ -22,7 +22,7 @@ INTERFACE zif_peng_azoai_sdk
   "! </ol>
   "!
   "! @parameter model |<p>The <strong>Model</strong> object instance.</p>
-  "! @raising zcx_peng_azoai_sdk_exception |
+  "! @raising zcx_peng_azoai_sdk_exception | <p class="shorttext synchronized" lang="en">MSPENG:Azure Open AI ABAP SDK Exception</p>
   METHODS model
     RETURNING
       VALUE(model) TYPE REF TO zif_peng_azoai_sdk_comp_model
@@ -55,6 +55,12 @@ INTERFACE zif_peng_azoai_sdk
   METHODS completions
     RETURNING
       VALUE(completions) TYPE REF TO zif_peng_azoai_sdk_comp_compl
+    RAISING
+      zcx_peng_azoai_sdk_exception.
+
+  METHODS chat_completions
+    RETURNING
+      VALUE(chat_completions) TYPE REF TO zif_peng_ai_sdk_comp_chatcompl
     RAISING
       zcx_peng_azoai_sdk_exception.
 

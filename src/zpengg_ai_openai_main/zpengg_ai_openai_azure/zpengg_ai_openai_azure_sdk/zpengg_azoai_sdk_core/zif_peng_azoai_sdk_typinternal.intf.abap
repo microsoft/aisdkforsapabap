@@ -65,6 +65,16 @@ INTERFACE zif_peng_azoai_sdk_typinternal
       total_tokens      TYPE i,
     END OF ty_completion_resobj_usage.
 
+************************* CHAT COMPLETION Data Types - INTERNAL ***********************
+  TYPES:
+    BEGIN OF ty_chatcompl_resobj_choices,
+      text          TYPE string,
+      index         TYPE i,
+      finish_reason TYPE string,
+      message       TYPE zif_peng_azoai_sdk_types=>ty_chatcompletion_message,
+    END OF ty_chatcompl_resobj_choices,
+    tty_chatcompl_resobj_choices TYPE STANDARD TABLE OF ty_chatcompl_resobj_choices WITH DEFAULT KEY.
+
 ************************* DEPLOYMENTS Data Types - INTERNAL ***********************
 * https://learn.microsoft.com/en-us/rest/api/cognitiveservices/azureopenaistable/deployments
   TYPES:
