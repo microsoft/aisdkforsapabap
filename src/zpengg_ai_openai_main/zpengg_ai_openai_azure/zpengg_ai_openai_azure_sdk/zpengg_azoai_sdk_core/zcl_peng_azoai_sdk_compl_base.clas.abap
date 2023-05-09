@@ -1,7 +1,6 @@
 CLASS zcl_peng_azoai_sdk_compl_base DEFINITION
   PUBLIC
   INHERITING FROM zcl_peng_azoai_sdk_component
-  ABSTRACT
   CREATE PUBLIC .
 
   PUBLIC SECTION.
