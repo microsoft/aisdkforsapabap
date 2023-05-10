@@ -188,4 +188,8 @@ CLASS zcl_peng_azoai_sdk_base IMPLEMENTATION.
     ENDIF.
   ENDMETHOD.
 
+  METHOD zif_peng_azoai_sdk~chat_completions.
+    _objhelper->raise_feature_notimpl_ex( ).
+  ENDMETHOD.
+
 ENDCLASS.

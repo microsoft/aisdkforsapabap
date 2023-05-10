@@ -68,7 +68,7 @@ INTERFACE zif_peng_azoai_sdk_types
       model          TYPE string,
     END OF ty_deployments_create.
 
-*********   Consumption operation data types ************
+*********   Completions operation data types ************
   TYPES:
     BEGIN OF ty_completion_input,
       prompt     TYPE stringtab,
@@ -85,6 +85,32 @@ INTERFACE zif_peng_azoai_sdk_types
       choices TYPE zif_peng_azoai_sdk_typinternal=>tty_completion_resobj_choices,
       usage   TYPE zif_peng_azoai_sdk_typinternal=>ty_completion_resobj_usage,
     END OF ty_completion_output.
+
+
+*********   Chat Completions operation data types ************
+  TYPES:
+    BEGIN OF ty_chatcompletion_message,
+      role    TYPE string,
+      content TYPE string,
+    END OF ty_chatcompletion_message,
+
+    tty_chatcompletion_messages TYPE STANDARD TABLE OF ty_chatcompletion_message WITH DEFAULT KEY,
+
+    BEGIN OF ty_chatcompletion_input,
+      messages   TYPE zif_peng_azoai_sdk_types=>tty_chatcompletion_messages,
+      max_tokens TYPE i,
+      user       TYPE string,       "A unique identifier representing your end-user, which can help Azure OpenAI to monitor and detect abuse.
+      n          TYPE i,            "How many chat completion choices to generate for each input message
+    END OF ty_chatcompletion_input,
+
+    BEGIN OF ty_chatcompletion_output,
+      id      TYPE string,
+      object  TYPE string,
+      created TYPE i,
+      model   TYPE string,
+      choices TYPE zif_peng_azoai_sdk_typinternal=>tty_chatcompl_resobj_choices,
+      usage   TYPE zif_peng_azoai_sdk_typinternal=>ty_completion_resobj_usage,
+    END OF ty_chatcompletion_output.
 
 *********   File operation data types ************
   TYPES:

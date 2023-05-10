@@ -12,7 +12,7 @@ INTERFACE zif_peng_azoai_sdk_uripatterns
       version      TYPE string VALUE '{version}',
       deploymentid TYPE string VALUE '{deployment-id}',
       modelid      TYPE string VALUE '{model-id}',
-      fileid       type string value '{file-id}',
+      fileid       TYPE string VALUE '{file-id}',
       finetuneid   TYPE string VALUE '{fine-tune-id}',
     END OF template_ids,
 
@@ -63,6 +63,12 @@ INTERFACE zif_peng_azoai_sdk_uripatterns
       BEGIN OF embeddings,
         create TYPE string VALUE '{endpoint}/openai/deployments/{deployment-id}/embeddings?api-version={version}',  "HTTP - POST
       END OF embeddings,
-    END OF version_20221201_endpoint.
+    END OF version_20221201_endpoint,
+
+    BEGIN OF version_2023_03_15_preview,
+      BEGIN OF completions,
+        create TYPE string VALUE '{endpoint}/openai/deployments/{deployment-id}/chat/completions?api-version={version}', "HTTP - POST
+      END OF completions,
+    END OF version_2023_03_15_preview.
 
 ENDINTERFACE.

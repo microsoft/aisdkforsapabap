@@ -30,7 +30,7 @@
      <SPRSL>E</SPRSL>
      <ARBGB>ZMSPENG_AZOAISDK_MSG</ARBGB>
      <MSGNR>003</MSGNR>
-     <TEXT>Feature Not Implemented.</TEXT>
+     <TEXT>Feature Not Implemented or Requested operation not valid for version.</TEXT>
     </T100>
     <T100>
      <SPRSL>E</SPRSL>

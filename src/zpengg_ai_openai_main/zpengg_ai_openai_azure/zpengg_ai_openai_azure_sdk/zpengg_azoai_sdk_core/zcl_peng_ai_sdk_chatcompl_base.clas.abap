@@ -1,11 +1,11 @@
-CLASS zcl_peng_azoai_sdk_compl_base DEFINITION
+CLASS zcl_peng_ai_sdk_chatcompl_base DEFINITION
   PUBLIC
   INHERITING FROM zcl_peng_azoai_sdk_component
   CREATE PUBLIC .
 
   PUBLIC SECTION.
 
-    INTERFACES zif_peng_azoai_sdk_comp_compl.
+    INTERFACES zif_peng_ai_sdk_comp_chatcompl.
     METHODS constructor.
 
   PROTECTED SECTION.
@@ -14,22 +14,22 @@ ENDCLASS.
 
 
 
-CLASS zcl_peng_azoai_sdk_compl_base IMPLEMENTATION.
+CLASS zcl_peng_ai_sdk_chatcompl_base IMPLEMENTATION.
 
   METHOD constructor.
 
     super->constructor( ).
-    _component_type = zif_peng_azoai_sdk_constants=>c_component_type-completions.
+    _component_type = zif_peng_azoai_sdk_constants=>c_component_type-chat_completions.
   ENDMETHOD.
 
 
 
-  METHOD zif_peng_azoai_sdk_comp_compl~create.
+  METHOD zif_peng_ai_sdk_comp_chatcompl~create.
 *****************************************************************************************************************
-* Class          : ZCL_PENG_AZOAI_SDK_COMPL_BASE
-* Method         : zif_peng_azoai_sdk_comp_compl~create
-* Created by     : Gopal Nair
-* Date           : Mar 28, 2023
+* Class          : ZCL_PENG_AI_SDK_CHATCOMPL_BASE
+* Method         : zif_peng_ai_sdk_comp_chatcompl~create
+* Created by     : GONAIR (Gopal Nair)
+* Date           : May 7, 2023
 *-------------------------------------------------------------------------------------------------------------
 * Description
 *-------------------------------------------------------------------------------------------------------------
@@ -38,8 +38,9 @@ CLASS zcl_peng_azoai_sdk_compl_base IMPLEMENTATION.
 *-------------------------------------------------------------------------------------------------------------
 *                       Modification History
 *-------------------------------------------------------------------------------------------------------------
-* Mar 28, 2023 // Gopal Nair // Initial Version
+* May 7, 2023 // GONAIR // Initial Version
 *****************************************************************************************************************
+
     _not_implemented( ).
   ENDMETHOD.
 
