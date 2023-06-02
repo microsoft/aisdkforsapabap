@@ -223,6 +223,13 @@ CLASS zcl_peng_azoai_sdk_helper IMPLEMENTATION.
                                     component_class_name = 'zcl_peng_azoai_sdk_v1_finetune'
                                )
 
+                               "Embeddings Worker Component
+                               (
+                                    component_type = zif_peng_azoai_sdk_constants=>c_component_type-embeddings
+                                    component_classification = zif_peng_azoai_sdk_constants=>c_component_classification-submodule
+                                    component_class_name = 'zcl_peng_azoai_sdk_v1_embeding'
+                               )
+
                                "Completions Worker Component
                                (
                                     component_type = zif_peng_azoai_sdk_constants=>c_component_type-completions
@@ -280,6 +287,13 @@ CLASS zcl_peng_azoai_sdk_helper IMPLEMENTATION.
                                       component_type = zif_peng_azoai_sdk_constants=>c_component_type-fine_tuning
                                       component_classification = zif_peng_azoai_sdk_constants=>c_component_classification-submodule
                                       component_class_name = 'zcl_peng_azoai_sdk_v1_finetune'
+                                 )
+
+                                 "Embeddings Worker Component
+                                 (
+                                      component_type = zif_peng_azoai_sdk_constants=>c_component_type-embeddings
+                                      component_classification = zif_peng_azoai_sdk_constants=>c_component_classification-submodule
+                                      component_class_name = 'zcl_peng_azoai_sdk_v1_embeding'
                                  )
 
                                  "Completions Worker Component

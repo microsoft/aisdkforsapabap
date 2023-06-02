@@ -49,6 +49,18 @@ INTERFACE zif_peng_azoai_sdk_typinternal
 
 
 ************************* END - MODEL Data Types - INTERNAL ***********************
+************************* EMBEDDINGS Data Types - INTERNAL ***********************
+  TYPES:
+    ty_coordinate TYPE p LENGTH 10 DECIMALS 9,
+    BEGIN OF ty_embedding,
+      object    TYPE string,
+      index     TYPE i,
+      embedding TYPE STANDARD TABLE OF ty_coordinate WITH DEFAULT KEY,
+    END OF ty_embedding,
+
+    tty_embedding TYPE STANDARD TABLE OF ty_embedding WITH DEFAULT KEY.
+
+************************* END - EMBEDDINGS Data Types - INTERNAL ***********************
 
 ************************* COMPLETION Data Types - INTERNAL ***********************
   TYPES:

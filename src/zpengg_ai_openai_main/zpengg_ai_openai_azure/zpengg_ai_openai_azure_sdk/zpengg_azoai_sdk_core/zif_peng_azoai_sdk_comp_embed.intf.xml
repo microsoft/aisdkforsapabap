@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_INTF" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOINTERF>
+    <CLSNAME>ZIF_PENG_AZOAI_SDK_COMP_EMBED</CLSNAME>
+    <LANGU>E</LANGU>
+    <DESCRIPT>MSPENG: Azure Open AI SDK - Embeddings Component</DESCRIPT>
+    <EXPOSURE>2</EXPOSURE>
+    <STATE>1</STATE>
+    <UNICODE>X</UNICODE>
+   </VSEOINTERF>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>CREATE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates embedding from input text.</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE</CMPNAME>
+     <SCONAME>DEPLOYMENTID</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Deployment ID on which the embedding must be generated.</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE</CMPNAME>
+     <SCONAME>ERROR</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Error information parsed from JSON string</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE</CMPNAME>
+     <SCONAME>INPUTS</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Input texts for embedding</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE</CMPNAME>
+     <SCONAME>JSON</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>JSON String received from AI engine.</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE</CMPNAME>
+     <SCONAME>RESPONSE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Parsed and ABAP ready data structure from JSON String</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE</CMPNAME>
+     <SCONAME>STATUSCODE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>HTTP Response status code.</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE</CMPNAME>
+     <SCONAME>STATUSREASON</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>HTTP Status Reason.</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE</CMPNAME>
+     <SCONAME>ZCX_PENG_AZOAI_SDK_EXCEPTION</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Exception - Note - an AI layer error is NOT an exception.</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

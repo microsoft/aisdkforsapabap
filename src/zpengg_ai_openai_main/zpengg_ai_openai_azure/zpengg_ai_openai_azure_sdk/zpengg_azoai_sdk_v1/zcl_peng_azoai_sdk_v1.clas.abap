@@ -13,7 +13,8 @@ CLASS zcl_peng_azoai_sdk_v1 DEFINITION
       zif_peng_azoai_sdk~completions REDEFINITION,
       zif_peng_azoai_sdk~chat_completions REDEFINITION,
       zif_peng_azoai_sdk~files REDEFINITION,
-      zif_peng_azoai_sdk~finetunes REDEFINITION.
+      zif_peng_azoai_sdk~finetunes REDEFINITION,
+      zif_peng_azoai_sdk~embeddings REDEFINITION.
   PROTECTED SECTION.
   PRIVATE SECTION.
 
@@ -238,8 +239,44 @@ CLASS zcl_peng_azoai_sdk_v1 IMPLEMENTATION.
   ENDMETHOD.
 
   METHOD zif_peng_azoai_sdk~chat_completions.
+*****************************************************************************************************************
+* Class          : ZCL_PENG_AZOAI_SDK_V1
+* Method         : zif_peng_azoai_sdk~chat_completions
+* Created by     : Gopal Nair
+* Date           : Jun 2, 2023
+*-------------------------------------------------------------------------------------------------------------
+* Description
+*-------------------------------------------------------------------------------------------------------------
+* Returns an instace of SDK Chat Completions component
+* Chat Completions are interactions with GPT-4 models with an AI Engine.
+*-------------------------------------------------------------------------------------------------------------
+*                       Modification History
+*-------------------------------------------------------------------------------------------------------------
+* Jun 2, 2023 // GONAIR // Initial Version
+*****************************************************************************************************************
     _check_component_safety( component_type = zif_peng_azoai_sdk_constants=>c_component_type-chat_completions ).
     chat_completions ?= _t_subcomponents[ component_type = zif_peng_azoai_sdk_constants=>c_component_type-chat_completions ]-component_instance.
+  ENDMETHOD.
+
+  METHOD zif_peng_azoai_sdk~embeddings.
+*****************************************************************************************************************
+* Class          : ZCL_PENG_AZOAI_SDK_V1
+* Method         : zif_peng_azoai_sdk~embeddings
+* Created by     : GONAIR (Gopal Nair)
+* Date           : Jun 2, 2023
+*-------------------------------------------------------------------------------------------------------------
+* Description
+*-------------------------------------------------------------------------------------------------------------
+* Returns an instance of SDK Embeddings component
+* An embedding is a vector (list) of floating point numbers. The distance between two vectors measures their
+* relatedness. Small distances suggest high relatedness and large distances suggest low relatedness.
+*-------------------------------------------------------------------------------------------------------------
+*                       Modification History
+*-------------------------------------------------------------------------------------------------------------
+* Jun 2, 2023 // GONAIR // Initial Version
+*****************************************************************************************************************
+    _check_component_safety( component_type = zif_peng_azoai_sdk_constants=>c_component_type-embeddings ).
+    embedding ?= _t_subcomponents[ component_type = zif_peng_azoai_sdk_constants=>c_component_type-embeddings ]-component_instance.
   ENDMETHOD.
 
 ENDCLASS.
