@@ -192,4 +192,8 @@ CLASS zcl_peng_azoai_sdk_base IMPLEMENTATION.
     _objhelper->raise_feature_notimpl_ex( ).
   ENDMETHOD.
 
+  METHOD zif_peng_azoai_sdk~embeddings.
+    _objhelper->raise_feature_notimpl_ex( ).
+  ENDMETHOD.
+
 ENDCLASS.

@@ -12,6 +12,11 @@
    </VSEOINTERF>
    <DESCRIPTIONS>
     <SEOCOMPOTX>
+     <CMPNAME>CHAT_COMPLETIONS</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns an instace of SDK Chat Completions component</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
      <CMPNAME>COMPLETIONS</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Returns an instance of SDK Completions Component</DESCRIPT>
@@ -20,6 +25,11 @@
      <CMPNAME>DEPLOYMENTS</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Returns an instance of SDK Deployments Component</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>EMBEDDINGS</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Returns an instance of SDK Embeddings component</DESCRIPT>
     </SEOCOMPOTX>
     <SEOCOMPOTX>
      <CMPNAME>FILES</CMPNAME>
@@ -44,6 +54,12 @@
    </DESCRIPTIONS>
    <DESCRIPTIONS_SUB>
     <SEOSUBCOTX>
+     <CMPNAME>CHAT_COMPLETIONS</CMPNAME>
+     <SCONAME>CHAT_COMPLETIONS</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Chat Completions SDK Component</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
      <CMPNAME>COMPLETIONS</CMPNAME>
      <SCONAME>COMPLETIONS</SCONAME>
      <LANGU>E</LANGU>
@@ -54,6 +70,12 @@
      <SCONAME>DEPLOYMENTS</SCONAME>
      <LANGU>E</LANGU>
      <DESCRIPT>An instance of SDK Deployment Component</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>EMBEDDINGS</CMPNAME>
+     <SCONAME>EMBEDDING</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Embeddings SDK Component</DESCRIPT>
     </SEOSUBCOTX>
     <SEOSUBCOTX>
      <CMPNAME>FILES</CMPNAME>

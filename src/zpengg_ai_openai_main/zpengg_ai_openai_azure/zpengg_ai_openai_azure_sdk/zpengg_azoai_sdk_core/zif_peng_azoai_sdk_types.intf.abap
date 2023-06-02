@@ -68,6 +68,18 @@ INTERFACE zif_peng_azoai_sdk_types
       model          TYPE string,
     END OF ty_deployments_create.
 
+*********   Embeddings operation data types ************
+  TYPES: BEGIN OF ty_embeddings_input,
+           input TYPE stringtab,
+         END OF ty_embeddings_input,
+
+         BEGIN OF ty_embeddings_output,
+           object TYPE string,
+           data   TYPE zif_peng_azoai_sdk_typinternal=>tty_embedding,
+           model  TYPE string,
+           usage  TYPE zif_peng_azoai_sdk_typinternal=>ty_completion_resobj_usage,
+         END OF ty_embeddings_output.
+
 *********   Completions operation data types ************
   TYPES:
     BEGIN OF ty_completion_input,

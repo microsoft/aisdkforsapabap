@@ -58,6 +58,10 @@ INTERFACE zif_peng_azoai_sdk
     RAISING
       zcx_peng_azoai_sdk_exception.
 
+  "! <p class="shorttext synchronized" lang="en">Returns an instace of SDK Chat Completions component</p>
+  "! Chat Completions are interactions with GPT-4 models with an AI Engine.
+  "! @parameter chat_completions | <p class="shorttext synchronized" lang="en">Chat Completions SDK Component</p>
+  "! @raising zcx_peng_azoai_sdk_exception | <p class="shorttext synchronized" lang="en"></p>
   METHODS chat_completions
     RETURNING
       VALUE(chat_completions) TYPE REF TO zif_peng_ai_sdk_comp_chatcompl
@@ -110,5 +114,18 @@ INTERFACE zif_peng_azoai_sdk
       VALUE(finetunes) TYPE REF TO zif_peng_azoai_sdk_comp_fintun
     RAISING
       zcx_peng_azoai_sdk_exception.
+
+
+  "! <p class="shorttext synchronized" lang="en">Returns an instance of SDK Embeddings component</p>
+  "! An embedding is a vector (list) of floating point numbers. The distance between two vectors measures
+  "! their relatedness. Small distances suggest high relatedness and large distances suggest low relatedness.
+  "! @parameter embedding | <p class="shorttext synchronized" lang="en">Embeddings SDK Component</p>
+  "! @raising zcx_peng_azoai_sdk_exception | <p class="shorttext synchronized" lang="en"></p>
+  METHODS embeddings
+    RETURNING
+      VALUE(embedding) TYPE REF TO zif_peng_azoai_sdk_comp_embed
+    RAISING
+      zcx_peng_azoai_sdk_exception.
+
 
 ENDINTERFACE.
