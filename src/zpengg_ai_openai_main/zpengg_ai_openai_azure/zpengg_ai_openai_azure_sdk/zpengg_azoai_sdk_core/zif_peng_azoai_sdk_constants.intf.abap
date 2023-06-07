@@ -87,6 +87,10 @@ INTERFACE zif_peng_azoai_sdk_constants
     c_central_control_class    TYPE string VALUE 'ZCL_PENG_AZOAI_CENTRALCONTROL',
     c_sdk_default_profile_name TYPE zde_azoaisdk_profileid VALUE 'DEFAULT',
 
+    BEGIN OF c_urltemplateproviders,
+      c_azureopenai TYPE string VALUE 'zcl_peng_azoai_urlprovider',
+    END OF c_urltemplateproviders,
+
     BEGIN OF c_chatcompletion_role,
       user      TYPE string VALUE 'user',
       assistant TYPE string VALUE 'assistant',

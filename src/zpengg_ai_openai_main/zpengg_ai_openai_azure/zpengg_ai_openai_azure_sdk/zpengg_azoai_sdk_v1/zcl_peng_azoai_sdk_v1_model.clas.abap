@@ -42,10 +42,12 @@ CLASS zcl_peng_azoai_sdk_v1_model IMPLEMENTATION.
         operation      = zif_peng_azoai_sdk_constants=>c_component_operations-get
     ).
 
-* Get the actual URL and HTTP communication objects from helper layer.
     _objsdkhelper->get_httpobjs_from_uripattern(
       EXPORTING
-        uri_pattern            = zif_peng_azoai_sdk_uripatterns=>version_20221201_endpoint-model-get  "'{endpoint}/openai/models/{model-id}?api-version={version}'
+        uri_pattern            = _objconfig->get_accesspoint_provider( )->get_urltemplate(
+                                                                                            component = _component_type
+                                                                                            operation = zif_peng_azoai_sdk_constants=>c_component_operations-get
+                                                                                         )  "'{endpoint}/openai/models/{model-id}?api-version={version}'
         ivobj_config           = _objconfig
         ivt_templatecomponents = VALUE #(  ( name = zif_peng_azoai_sdk_uripatterns=>template_ids-modelid value = iv_modelid ) ) "model ID.
       IMPORTING
@@ -100,10 +102,12 @@ CLASS zcl_peng_azoai_sdk_v1_model IMPLEMENTATION.
         operation      = zif_peng_azoai_sdk_constants=>c_component_operations-list
     ).
 
-* Get the actual URL and HTTP communication objects from helper layer.
     _objsdkhelper->get_httpobjs_from_uripattern(
       EXPORTING
-        uri_pattern            = zif_peng_azoai_sdk_uripatterns=>version_20221201_endpoint-model-list  "'{endpoint}/openai/models/{model-id}?api-version={version}'
+        uri_pattern            = _objconfig->get_accesspoint_provider( )->get_urltemplate(
+                                                                                            component = _component_type
+                                                                                            operation = zif_peng_azoai_sdk_constants=>c_component_operations-list
+                                                                                         )  "'{endpoint}/openai/models/{model-id}?api-version={version}'
         ivobj_config           = _objconfig
       IMPORTING
         ov_url                 = DATA(actual_url)

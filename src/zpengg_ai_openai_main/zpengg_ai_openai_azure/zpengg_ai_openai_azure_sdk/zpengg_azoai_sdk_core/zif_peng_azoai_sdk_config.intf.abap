@@ -87,6 +87,18 @@ INTERFACE zif_peng_azoai_sdk_config
       zcx_peng_azoai_sdk_exception .
 
 
+  "! <p class="shorttext synchronized" lang="en">Gets the provider for access points</p>
+  "! For each API type, there are specific access points based on AI engine documentation.
+  "! This method returns the abstraction layer which will then be used for accessing these
+  "! end points during runtime.
+  "! @parameter url_provider | <p class="shorttext synchronized" lang="en"></p>
+  "! @raising zcx_peng_azoai_sdk_exception | <p class="shorttext synchronized" lang="en"></p>
+  METHODS get_accesspoint_provider
+    RETURNING
+      VALUE(url_provider) TYPE REF TO zcl_peng_aisdk_templprovider
+    RAISING
+      zcx_peng_azoai_sdk_exception .
+
   "! <p class="shorttext synchronized" lang="en">Initialization of Config Component</p>
   "!
   "! @parameter api_version                  | <p class="shorttext synchronized" lang="en">API Version</p>

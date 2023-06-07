@@ -10,6 +10,9 @@ REPORT zp_msaisdkdemo_deployments.
 INCLUDE zp_msaisdkdemo_params_top.  "Common Input Parameters (AI End Point, Version, Key)
 INCLUDE zp_msaisdkdemo_common.      "Common Data Declarations (SDK Instance Object, status Code, Status Reason, Return JSON String, Error )
 
+PARAMETERS:
+    p_modid  TYPE string OBLIGATORY LOWER CASE.
+
 DATA:
   deployment        TYPE zif_peng_azoai_sdk_types=>ty_deployments,        "ABAP Type for Deployments Information.
   deployment_create TYPE zif_peng_azoai_sdk_types=>ty_deployments_create, "ABAP Type for new Deployment Creation
@@ -29,7 +32,7 @@ START-OF-SELECTION.
 ************************** Creating a New Deployment ***************************
 * Deployments - Create
 *     Create a New Deployment based on model : text-curie-001
-      deployment_create-model = 'text-curie-001'.
+      deployment_create-model = p_modid.
       sdk_instance->deployments( )->create(
         EXPORTING
           iv_deployment_info = deployment_create

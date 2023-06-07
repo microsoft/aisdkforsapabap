@@ -69,6 +69,9 @@ INTERFACE zif_peng_azoai_sdk_uripatterns
       BEGIN OF completions,
         create TYPE string VALUE '{endpoint}/openai/deployments/{deployment-id}/chat/completions?api-version={version}', "HTTP - POST
       END OF completions,
+      BEGIN OF chat_completions,
+        create TYPE string VALUE '{endpoint}/openai/deployments/{deployment-id}/chat/completions?api-version={version}', "HTTP - POST
+      END OF chat_completions,
     END OF version_2023_03_15_preview.
 
 ENDINTERFACE.

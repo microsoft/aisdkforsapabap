@@ -45,9 +45,12 @@ CLASS zcl_peng_azoai_sdk_v1_deploy IMPLEMENTATION.
 * Get the actual URL and HTTP communication objects from helper layer.
     _objsdkhelper->get_httpobjs_from_uripattern(
       EXPORTING
-        uri_pattern            = zif_peng_azoai_sdk_uripatterns=>version_20221201_endpoint-deployments-get  "{endpoint}/openai/deployments/{deployment-id}?api-version={version}
+        uri_pattern            = _objconfig->get_accesspoint_provider( )->get_urltemplate(
+                                                                                            component = _component_type
+                                                                                            operation = zif_peng_azoai_sdk_constants=>c_component_operations-get
+                                                                                         )   "{endpoint}/openai/deployments/{deployment-id}?api-version={version}
         ivobj_config           = _objconfig
-        ivt_templatecomponents = VALUE #(  ( name = zif_peng_azoai_sdk_uripatterns=>template_ids-deploymentid value = deploymentid ) ) "model ID.
+        ivt_templatecomponents = VALUE #(  ( name = zif_peng_azoai_sdk_uripatterns=>template_ids-deploymentid value = deploymentid ) ) "Deployment ID.
       IMPORTING
         ov_url                 = DATA(actual_url)
         ovobj_http             = DATA(lo_http)
@@ -101,7 +104,10 @@ CLASS zcl_peng_azoai_sdk_v1_deploy IMPLEMENTATION.
 * Get the actual URL and HTTP communication objects from helper layer.
     _objsdkhelper->get_httpobjs_from_uripattern(
       EXPORTING
-        uri_pattern            = zif_peng_azoai_sdk_uripatterns=>version_20221201_endpoint-deployments-list  "{endpoint}/openai/deployments?api-version={version}'
+        uri_pattern            = _objconfig->get_accesspoint_provider( )->get_urltemplate(
+                                                                                            component = _component_type
+                                                                                            operation = zif_peng_azoai_sdk_constants=>c_component_operations-list
+                                                                                         )   "{endpoint}/openai/deployments?api-version={version}'
         ivobj_config           = _objconfig
       IMPORTING
         ov_url                 = DATA(actual_url)
@@ -164,7 +170,10 @@ CLASS zcl_peng_azoai_sdk_v1_deploy IMPLEMENTATION.
 * Get the actual URL and HTTP communication objects from helper layer.
     _objsdkhelper->get_httpobjs_from_uripattern(
       EXPORTING
-        uri_pattern            = zif_peng_azoai_sdk_uripatterns=>version_20221201_endpoint-deployments-create  "'{endpoint}/openai/deployments?api-version={version}'
+        uri_pattern            = _objconfig->get_accesspoint_provider( )->get_urltemplate(
+                                                                                            component = _component_type
+                                                                                            operation = zif_peng_azoai_sdk_constants=>c_component_operations-create
+                                                                                         )   "'{endpoint}/openai/deployments?api-version={version}'
         ivobj_config           = _objconfig
       IMPORTING
         ov_url                 = DATA(actual_url)
@@ -226,9 +235,12 @@ CLASS zcl_peng_azoai_sdk_v1_deploy IMPLEMENTATION.
 * Get the actual URL and HTTP communication objects from helper layer.
     _objsdkhelper->get_httpobjs_from_uripattern(
       EXPORTING
-        uri_pattern            = zif_peng_azoai_sdk_uripatterns=>version_20221201_endpoint-deployments-delete  "{endpoint}/openai/deployments/{deployment-id}?api-version={version}
+        uri_pattern            = _objconfig->get_accesspoint_provider( )->get_urltemplate(
+                                                                                            component = _component_type
+                                                                                            operation = zif_peng_azoai_sdk_constants=>c_component_operations-delete
+                                                                                         )   "{endpoint}/openai/deployments/{deployment-id}?api-version={version}
         ivobj_config           = _objconfig
-        ivt_templatecomponents = VALUE #(  ( name = zif_peng_azoai_sdk_uripatterns=>template_ids-deploymentid value = deploymentid ) ) "model ID.
+        ivt_templatecomponents = VALUE #(  ( name = zif_peng_azoai_sdk_uripatterns=>template_ids-deploymentid value = deploymentid ) ) "Deployment ID.
       IMPORTING
         ov_url                 = DATA(actual_url)
         ovobj_http             = DATA(lo_http)

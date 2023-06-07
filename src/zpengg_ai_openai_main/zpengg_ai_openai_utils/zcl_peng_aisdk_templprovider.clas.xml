@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCL_PENG_AISDK_TEMPLPROVIDER</CLSNAME>
+    <LANGU>E</LANGU>
+    <DESCRIPT>MSPENG:AZOAISDK URL Template Provider (INTERNAL USE ONLY)</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Creates and returns an instance of URL provider</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_URLTEMPLATE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Gets the URL Template if defined</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>API_TYPE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>API Type</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <SCONAME>API_VERSION</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>API Version</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_URLTEMPLATE</CMPNAME>
+     <SCONAME>ADDITIONAL_PARAMS</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Additional Parameters</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_URLTEMPLATE</CMPNAME>
+     <SCONAME>COMPONENT</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Component ID</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_URLTEMPLATE</CMPNAME>
+     <SCONAME>OPERATION</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Operation</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_URLTEMPLATE</CMPNAME>
+     <SCONAME>URL_TEMPLATE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>URL Template, if defined</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>

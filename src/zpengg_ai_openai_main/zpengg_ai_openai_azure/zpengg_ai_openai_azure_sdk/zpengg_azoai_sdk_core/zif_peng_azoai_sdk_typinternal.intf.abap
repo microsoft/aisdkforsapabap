@@ -10,7 +10,19 @@ INTERFACE zif_peng_azoai_sdk_typinternal
       component_instance       TYPE REF TO object, "Instance of the component. If both class name, and instance is specified, instance takes precedence.
     END OF ty_component_init_param,
 
-    tty_component_init_param TYPE STANDARD TABLE OF ty_component_init_param WITH DEFAULT KEY.
+    tty_component_init_param TYPE STANDARD TABLE OF ty_component_init_param WITH DEFAULT KEY,
+
+    BEGIN OF ty_endpoint_url_info,
+      version        TYPE string,
+      component_type TYPE string,
+      operation      TYPE string,
+      access_url     TYPE string,
+    END OF ty_endpoint_url_info,
+
+    tty_endpoint_url_info TYPE STANDARD TABLE OF ty_endpoint_url_info WITH DEFAULT KEY.
+
+
+
 
 ************************** END General Data Types - INTERNAL *****************
 

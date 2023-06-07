@@ -11,15 +11,16 @@ CLASS zcl_peng_azoai_sdk_config_base DEFINITION
 
   PROTECTED SECTION.
     DATA:
-      _objhelper          TYPE REF TO zcl_peng_azoai_sdk_helper,
-      _run_profile        TYPE ztaisdkrunprofil,
-      _obj_profilehandler TYPE REF TO zcl_peng_azoai_centralcontrol,
-      _api_version        TYPE string,
-      _api_base           TYPE string,
-      _api_type           TYPE string ,   "Defined in zif_peng_azoai_sdk_constants=>C_APITYPE
-      _api_key            TYPE string,    "Holds the API key or Auth Token
-      _auth_header        TYPE ihttpnvp,  "Authentication header - Set based on _api_type being set
-      _t_other_params     TYPE tihttpnvp. "Other parameters - primarily for user specific needs.
+      _objhelper           TYPE REF TO zcl_peng_azoai_sdk_helper,
+      _objtemplateprovider TYPE REF TO zcl_peng_aisdk_templprovider,
+      _run_profile         TYPE ztaisdkrunprofil,
+      _obj_profilehandler  TYPE REF TO zcl_peng_azoai_centralcontrol,
+      _api_version         TYPE string,
+      _api_base            TYPE string,
+      _api_type            TYPE string ,   "Defined in zif_peng_azoai_sdk_constants=>C_APITYPE
+      _api_key             TYPE string,    "Holds the API key or Auth Token
+      _auth_header         TYPE ihttpnvp,  "Authentication header - Set based on _api_type being set
+      _t_other_params      TYPE tihttpnvp. "Other parameters - primarily for user specific needs.
 
     METHODS:
       "! <p class="shorttext synchronized" lang="en">Loads the SDK run profile from Configuration DB</p>
@@ -132,7 +133,13 @@ CLASS zcl_peng_azoai_sdk_config_base IMPLEMENTATION.
 *-------------------------------------------------------------------------------------------------------------
 * Mar 28, 2023 // Gopal Nair // Initial Version
 *****************************************************************************************************************
-    _objhelper->raise_feature_notimpl_ex( ).
+*    _objhelper->raise_feature_notimpl_ex( ).
+    _objtemplateprovider = NEW zcl_peng_aisdk_templprovider(
+                                                              api_version       = api_version
+                                                              api_type          = api_type
+                                                            ).
+
+
   ENDMETHOD.
 
 
@@ -361,6 +368,26 @@ CLASS zcl_peng_azoai_sdk_config_base IMPLEMENTATION.
 * Apr 6, 2023 // Gopal Nair // Initial Version
 *****************************************************************************************************************
     profile_handler = _obj_profilehandler.
+  ENDMETHOD.
+
+  METHOD zif_peng_azoai_sdk_config~get_accesspoint_provider.
+*****************************************************************************************************************
+* Class          : ZCL_PENG_AZOAI_SDK_CONFIG_BASE
+* Method         : zif_peng_azoai_sdk_config~get_accesspoint_provider
+* Created by     : Gopal Nair
+* Date           : Jun 5, 2023
+*-------------------------------------------------------------------------------------------------------------
+* Description
+*-------------------------------------------------------------------------------------------------------------
+* Gets the provider for access points
+* For each API type, there are specific access points based on AI engine documentation. This method returns
+* the abstraction layer which will then be used for accessing these end points during runtime.
+*-------------------------------------------------------------------------------------------------------------
+*                       Modification History
+*-------------------------------------------------------------------------------------------------------------
+* Jun 5, 2023 // GONAIR // Initial Version
+*****************************************************************************************************************
+    url_provider = _objtemplateprovider.
   ENDMETHOD.
 
 ENDCLASS.

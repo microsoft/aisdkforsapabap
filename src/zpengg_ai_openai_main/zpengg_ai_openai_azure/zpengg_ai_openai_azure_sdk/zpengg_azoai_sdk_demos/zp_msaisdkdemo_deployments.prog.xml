@@ -13,13 +13,19 @@
     <item>
      <ID>R</ID>
      <ENTRY>MS AI SDK for SAP : Demo Program for Deployment</ENTRY>
-     <LENGTH>55</LENGTH>
+     <LENGTH>47</LENGTH>
     </item>
     <item>
      <ID>S</ID>
      <KEY>P_KEY</KEY>
      <ENTRY>Key</ENTRY>
      <LENGTH>11</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>P_MODID</KEY>
+     <ENTRY>Model ID for Deployment</ENTRY>
+     <LENGTH>31</LENGTH>
     </item>
     <item>
      <ID>S</ID>

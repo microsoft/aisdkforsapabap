@@ -3,9 +3,9 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <VSEOCLASS>
-    <CLSNAME>ZCL_PENG_URL_TEMPLATE_PROVIDER</CLSNAME>
+    <CLSNAME>ZCL_PENG_AISDK_TEMPLPROV_BASE</CLSNAME>
     <LANGU>E</LANGU>
-    <DESCRIPT>MSPENG:AZOAISDK URL Template Provider (INTERNAL USE ONLY)</DESCRIPT>
+    <DESCRIPT>MSPENG:AISDK: Base Class for Access Point URL provider</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
     <FIXPT>X</FIXPT>

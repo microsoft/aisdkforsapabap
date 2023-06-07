@@ -110,6 +110,18 @@ CLASS zcl_peng_azoai_sdk_v1_config IMPLEMENTATION.
 *-------------------------------------------------------------------------------------------------------------
 * Apr 6, 2023 // Gopal Nair // Initial Version
 *****************************************************************************************************************
+
+    super->zif_peng_azoai_sdk_config~initialize_config(
+      EXPORTING
+        api_version = api_version           " API Version
+        api_base    = api_base              " API Base
+        api_type    = api_type              " API Type
+        api_key     = api_key               " API Key
+        sdkprofile  = sdkprofile            " SDK Profile ID as provided by organization SDK administrator
+        init_params = init_params           " Additional parameters as specified by organization policies
+    ).
+
+
 *   Load supported versions.
     _load_supported_versions( ).
 

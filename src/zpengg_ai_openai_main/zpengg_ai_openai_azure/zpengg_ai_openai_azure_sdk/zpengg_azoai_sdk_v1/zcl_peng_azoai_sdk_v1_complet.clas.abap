@@ -68,7 +68,10 @@ CLASS zcl_peng_azoai_sdk_v1_complet IMPLEMENTATION.
 * Get the actual URL and HTTP communication objects from helper layer.
     _objsdkhelper->get_httpobjs_from_uripattern(
       EXPORTING
-        uri_pattern            = zif_peng_azoai_sdk_uripatterns=>version_20221201_endpoint-completions-create  "{endpoint}/openai/deployments/{deployment-id}/completions?api-version={version}'
+        uri_pattern            = _objconfig->get_accesspoint_provider( )->get_urltemplate(
+                                                                                            component = _component_type
+                                                                                            operation = zif_peng_azoai_sdk_constants=>c_component_operations-create
+                                                                                         )   "{endpoint}/openai/deployments/{deployment-id}/completions?api-version={version}'
         ivobj_config           = _objconfig
         ivt_templatecomponents = VALUE #(  ( name = zif_peng_azoai_sdk_uripatterns=>template_ids-deploymentid value = deploymentid ) ) "Deployment ID.
       IMPORTING
