@@ -77,10 +77,10 @@ CLASS zcl_peng_oai_urlprovider IMPLEMENTATION.
                                       ( operation = zif_peng_azoai_sdk_constants=>c_component_operations-get_events     access_url = zif_peng_oai_sdk_uripatterns=>version_v1_endpoint-finetunes-events )   "FineTunes - Events
                                       ( operation = zif_peng_azoai_sdk_constants=>c_component_operations-delete         access_url = zif_peng_oai_sdk_uripatterns=>version_v1_endpoint-finetunes-delete  )  "FineTunes - Delete
 
-*
-*                                      "EMBEDDINGS component - Azure Open AI
-*                                      component_type = zif_peng_azoai_sdk_constants=>c_component_type-embeddings
-*                                      ( operation = zif_peng_azoai_sdk_constants=>c_component_operations-create access_url = zif_peng_azoai_sdk_uripatterns=>version_20221201_endpoint-embeddings-create )
+
+                                      "EMBEDDINGS component - Azure Open AI
+                                      component_type = zif_peng_azoai_sdk_constants=>c_component_type-embeddings
+                                      ( operation = zif_peng_azoai_sdk_constants=>c_component_operations-create access_url = zif_peng_oai_sdk_uripatterns=>version_v1_endpoint-embeddings-create )
 
                                       "COMPLETIONS (GPT-3) component - Azure Open AI
                                       component_type = zif_peng_azoai_sdk_constants=>c_component_type-completions

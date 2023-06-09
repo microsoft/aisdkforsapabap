@@ -36,10 +36,10 @@ INTERFACE zif_peng_oai_sdk_uripatterns
       BEGIN OF completions,
         create TYPE string VALUE '{endpoint}/{version}/completions', "POST https://api.openai.com/v1/completions
       END OF completions,
-*
-*      BEGIN OF embeddings,
-*        create TYPE string VALUE '{endpoint}/openai/deployments/{deployment-id}/embeddings?api-version={version}',  "HTTP - POST
-*      END OF embeddings,
+
+      BEGIN OF embeddings,
+        create TYPE string VALUE '{endpoint}/{version}/embeddings',  "POST https://api.openai.com/v1/embeddings
+      END OF embeddings,
 
       BEGIN OF chat_completions,
         create TYPE string VALUE '{endpoint}/{version}/chat/completions', "POST https://api.openai.com/v1/chat/completions
