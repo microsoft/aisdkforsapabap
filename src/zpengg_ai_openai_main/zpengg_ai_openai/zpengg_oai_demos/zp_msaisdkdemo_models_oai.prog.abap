@@ -53,18 +53,6 @@ START-OF-SELECTION.
 ********************************************************************************
       BREAK-POINT.
 
-      sdk_instance->deployments( )->list(
-*        IMPORTING
-*          statuscode   =                  " Status Code.
-*          statusreason =                  " Status Description
-*          json         =                  " JSON string with information about deployment, or error.
-*          deployments  =                  " ABAP ready deployment list
-*          error        =                  " ABAP ready error details
-      ).
-*      CATCH zcx_peng_azoai_sdk_exception. " MSPENG:Azure Open AI ABAP SDK Exception.
-
-
-
     CATCH zcx_peng_azoai_sdk_exception INTO DATA(ex). " MSPENG:Azure Open AI ABAP SDK Exception
       MESSAGE ex TYPE 'I'.
   ENDTRY.
