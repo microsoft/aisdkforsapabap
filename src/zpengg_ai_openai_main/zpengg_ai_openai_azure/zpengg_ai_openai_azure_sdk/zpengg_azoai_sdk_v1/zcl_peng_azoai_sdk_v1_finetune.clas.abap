@@ -19,7 +19,9 @@ ENDCLASS.
 
 
 
-CLASS zcl_peng_azoai_sdk_v1_finetune IMPLEMENTATION.
+CLASS ZCL_PENG_AZOAI_SDK_V1_FINETUNE IMPLEMENTATION.
+
+
   METHOD zif_peng_azoai_sdk_comp_fintun~cancel.
 *****************************************************************************************************************
 * Class          : ZCL_PENG_AZOAI_SDK_V1_FINETUNE
@@ -44,10 +46,13 @@ CLASS zcl_peng_azoai_sdk_v1_finetune IMPLEMENTATION.
         operation      = zif_peng_azoai_sdk_constants=>c_component_operations-cancel
     ).
 
-* Get the actual URL and HTTP communication objects from helper layer.
+* Get the actual URL and HTTP communication objects from helper layer
     _objsdkhelper->get_httpobjs_from_uripattern(
       EXPORTING
-        uri_pattern            = zif_peng_azoai_sdk_uripatterns=>version_20221201_endpoint-finetunes-cancel  "{endpoint}/openai/fine-tunes/{fine-tune-id}/cancel?api-version={version}'
+        uri_pattern            = _objconfig->get_accesspoint_provider( )->get_urltemplate(
+                                                                                            component = _component_type
+                                                                                            operation = zif_peng_azoai_sdk_constants=>c_component_operations-cancel
+                                                                                         )   "{endpoint}/openai/fine-tunes/{fine-tune-id}/cancel?api-version={version}'
         ivobj_config           = _objconfig
         ivt_templatecomponents = VALUE #(  ( name = zif_peng_azoai_sdk_uripatterns=>template_ids-finetuneid value = finetuneid  ) ) "Fine Tune ID.
       IMPORTING
@@ -80,6 +85,7 @@ CLASS zcl_peng_azoai_sdk_v1_finetune IMPLEMENTATION.
     ).
   ENDMETHOD.
 
+
   METHOD zif_peng_azoai_sdk_comp_fintun~create.
 *****************************************************************************************************************
 * Class          : ZCL_PENG_AZOAI_SDK_V1_FINETUNE
@@ -109,7 +115,10 @@ CLASS zcl_peng_azoai_sdk_v1_finetune IMPLEMENTATION.
 * Get the actual URL and HTTP communication objects from helper layer.
     _objsdkhelper->get_httpobjs_from_uripattern(
       EXPORTING
-        uri_pattern            = zif_peng_azoai_sdk_uripatterns=>version_20221201_endpoint-finetunes-create  "'{endpoint}/openai/fine-tunes?api-version={version}'
+        uri_pattern            = _objconfig->get_accesspoint_provider( )->get_urltemplate(
+                                                                                            component = _component_type
+                                                                                            operation = zif_peng_azoai_sdk_constants=>c_component_operations-create
+                                                                                         )   "'{endpoint}/openai/fine-tunes?api-version={version}'
         ivobj_config           = _objconfig
       IMPORTING
         ov_url                 = DATA(actual_url)
@@ -120,7 +129,8 @@ CLASS zcl_peng_azoai_sdk_v1_finetune IMPLEMENTATION.
 *   Prepare the body and set it
     DATA(lo_request) = lo_http_rest->if_rest_client~create_request_entity( ).
     lo_request->set_content_type( iv_media_type = 'application/json' ).
-    DATA(post_data) = to_lower( /ui2/cl_json=>serialize( data = finetune_create compress = /ui2/cl_json=>c_bool-true ) ) .
+
+    DATA(post_data) = /ui2/cl_json=>serialize( data = finetune_create compress = /ui2/cl_json=>c_bool-true pretty_name = /ui2/cl_json=>pretty_mode-low_case ).
     lo_request->set_string_data( iv_data = post_data ).
 
 *   Trigger the network operation.
@@ -141,6 +151,7 @@ CLASS zcl_peng_azoai_sdk_v1_finetune IMPLEMENTATION.
     ).
 
   ENDMETHOD.
+
 
   METHOD zif_peng_azoai_sdk_comp_fintun~delete.
 *****************************************************************************************************************
@@ -172,7 +183,10 @@ CLASS zcl_peng_azoai_sdk_v1_finetune IMPLEMENTATION.
 * Get the actual URL and HTTP communication objects from helper layer.
     _objsdkhelper->get_httpobjs_from_uripattern(
       EXPORTING
-        uri_pattern            = zif_peng_azoai_sdk_uripatterns=>version_20221201_endpoint-finetunes-delete  "'{endpoint}/openai/fine-tunes/{fine-tune-id}?api-version={version}'
+        uri_pattern            = _objconfig->get_accesspoint_provider( )->get_urltemplate(
+                                                                                            component = _component_type
+                                                                                            operation = zif_peng_azoai_sdk_constants=>c_component_operations-delete
+                                                                                         )   "'{endpoint}/openai/fine-tunes/{fine-tune-id}?api-version={version}'
         ivobj_config           = _objconfig
         ivt_templatecomponents = VALUE #(  ( name = zif_peng_azoai_sdk_uripatterns=>template_ids-finetuneid value = finetuneid   ) ) "Fine Tune ID.
       IMPORTING
@@ -197,6 +211,7 @@ CLASS zcl_peng_azoai_sdk_v1_finetune IMPLEMENTATION.
         iov_error         = error
     ).
   ENDMETHOD.
+
 
   METHOD zif_peng_azoai_sdk_comp_fintun~get.
 *****************************************************************************************************************
@@ -228,7 +243,10 @@ CLASS zcl_peng_azoai_sdk_v1_finetune IMPLEMENTATION.
 * Get the actual URL and HTTP communication objects from helper layer.
     _objsdkhelper->get_httpobjs_from_uripattern(
       EXPORTING
-        uri_pattern            = zif_peng_azoai_sdk_uripatterns=>version_20221201_endpoint-finetunes-get  "'{endpoint}/openai/fine-tunes/{fine-tune-id}?api-version={version}'
+        uri_pattern            = _objconfig->get_accesspoint_provider( )->get_urltemplate(
+                                                                                            component = _component_type
+                                                                                            operation = zif_peng_azoai_sdk_constants=>c_component_operations-get
+                                                                                         )   "'{endpoint}/openai/fine-tunes/{fine-tune-id}?api-version={version}'
         ivobj_config           = _objconfig
         ivt_templatecomponents = VALUE #(  ( name = zif_peng_azoai_sdk_uripatterns=>template_ids-finetuneid value = finetuneid  ) ) "Fine Tune ID.
       IMPORTING
@@ -253,6 +271,7 @@ CLASS zcl_peng_azoai_sdk_v1_finetune IMPLEMENTATION.
         iov_error         = error
     ).
   ENDMETHOD.
+
 
   METHOD zif_peng_azoai_sdk_comp_fintun~get_events.
 *****************************************************************************************************************
@@ -282,7 +301,10 @@ CLASS zcl_peng_azoai_sdk_v1_finetune IMPLEMENTATION.
 * Get the actual URL and HTTP communication objects from helper layer.
     _objsdkhelper->get_httpobjs_from_uripattern(
       EXPORTING
-        uri_pattern            = zif_peng_azoai_sdk_uripatterns=>version_20221201_endpoint-finetunes-events  "'{endpoint}/openai/fine-tunes/{fine-tune-id}/events?api-version={version}'
+        uri_pattern            = _objconfig->get_accesspoint_provider( )->get_urltemplate(
+                                                                                            component = _component_type
+                                                                                            operation = zif_peng_azoai_sdk_constants=>c_component_operations-get_events
+                                                                                         )   "'{endpoint}/openai/fine-tunes/{fine-tune-id}/events?api-version={version}'
         ivobj_config           = _objconfig
         ivt_templatecomponents = VALUE #(  ( name = zif_peng_azoai_sdk_uripatterns=>template_ids-finetuneid value = finetuneid  ) ) "Fine Tune ID.
       IMPORTING
@@ -307,6 +329,7 @@ CLASS zcl_peng_azoai_sdk_v1_finetune IMPLEMENTATION.
         iov_error         = error
     ).
   ENDMETHOD.
+
 
   METHOD zif_peng_azoai_sdk_comp_fintun~list.
 *****************************************************************************************************************
@@ -338,7 +361,10 @@ CLASS zcl_peng_azoai_sdk_v1_finetune IMPLEMENTATION.
 * Get the actual URL and HTTP communication objects from helper layer.
     _objsdkhelper->get_httpobjs_from_uripattern(
       EXPORTING
-        uri_pattern            = zif_peng_azoai_sdk_uripatterns=>version_20221201_endpoint-finetunes-list  "'{endpoint}/openai/fine-tunes?api-version={version}'
+        uri_pattern            = _objconfig->get_accesspoint_provider( )->get_urltemplate(
+                                                                                            component = _component_type
+                                                                                            operation = zif_peng_azoai_sdk_constants=>c_component_operations-list
+                                                                                         )   "'{endpoint}/openai/fine-tunes?api-version={version}'
         ivobj_config           = _objconfig
       IMPORTING
         ov_url                 = DATA(actual_url)
@@ -362,5 +388,4 @@ CLASS zcl_peng_azoai_sdk_v1_finetune IMPLEMENTATION.
         iov_error         = error
     ).
   ENDMETHOD.
-
 ENDCLASS.

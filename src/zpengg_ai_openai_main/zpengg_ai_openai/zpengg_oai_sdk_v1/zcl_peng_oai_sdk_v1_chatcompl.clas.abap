@@ -1,27 +1,27 @@
-CLASS zcl_peng_azoai_sdk_v1_complet DEFINITION
+CLASS zcl_peng_oai_sdk_v1_chatcompl DEFINITION
   PUBLIC
-  INHERITING FROM zcl_peng_azoai_sdk_compl_base
+  INHERITING FROM zcl_peng_ai_sdk_chatcompl_base
   CREATE PUBLIC .
 
   PUBLIC SECTION.
-    METHODS zif_peng_azoai_sdk_comp_compl~create REDEFINITION.
+    METHODS zif_peng_ai_sdk_comp_chatcompl~create REDEFINITION.
   PROTECTED SECTION.
   PRIVATE SECTION.
 ENDCLASS.
 
 
 
-CLASS zcl_peng_azoai_sdk_v1_complet IMPLEMENTATION.
-  METHOD zif_peng_azoai_sdk_comp_compl~create.
+CLASS zcl_peng_oai_sdk_v1_chatcompl IMPLEMENTATION.
+  METHOD zif_peng_ai_sdk_comp_chatcompl~create.
 *****************************************************************************************************************
-* Class          : ZCL_PENG_AZOAI_SDK_V1_COMPLET
-* Method         : zif_peng_azoai_sdk_comp_compl~create
-* Created by     : Gopal Nair
-* Date           : Apr 6, 2023
+* Class          : ZCL_PENG_AI_SDK_V1_CHATCOMPLET
+* Method         : zif_peng_ai_sdk_comp_chatcompl~create
+* Created by     : GONAIR (Gopal Nair)
+* Date           : June 9, 2023
 *-------------------------------------------------------------------------------------------------------------
 * Description
 *-------------------------------------------------------------------------------------------------------------
-* Performs a completion based on prompts and other parameters.
+* Performs a Chat completion based on prompts and other parameters.
 *
 * A Completion operation is about asking the AI engine something, and getting a response. The asking part of this
 * interaction is called "prompts". Prompt Engineering is used to create prompts which will guide the AI engine to
@@ -29,11 +29,16 @@ CLASS zcl_peng_azoai_sdk_v1_complet IMPLEMENTATION.
 *-------------------------------------------------------------------------------------------------------------
 *                       Modification History
 *-------------------------------------------------------------------------------------------------------------
-* Apr 6, 2023 // Gopal Nair // Initial Version
+* June 9, 2023 // GONAIR // Initial Version
 *****************************************************************************************************************
+    TYPES: BEGIN OF ty_oai_chatcompletioninput,
+             model TYPE string.
+             INCLUDE TYPE zif_peng_azoai_sdk_types=>ty_chatcompletion_input.
+           TYPES: END OF ty_oai_chatcompletioninput.
+
 
     DATA:
-        l_completions_create TYPE zif_peng_azoai_sdk_types=>ty_completion_input.
+        l_chatcompletions_create TYPE ty_oai_chatcompletioninput.
 
 *   Check if the operation is permitted for the run profile by asking profile handler.
     _objconfig->get_runprofile_handler( )->zif_peng_azoai_centralcontrol~perform_operation(
@@ -42,28 +47,15 @@ CLASS zcl_peng_azoai_sdk_v1_complet IMPLEMENTATION.
         operation      = zif_peng_azoai_sdk_constants=>c_component_operations-create
     ).
 
+    MOVE-CORRESPONDING prompts TO l_chatcompletions_create.
 
-    l_completions_create = prompts.
 
 *   If there are no prompts entered by the user, then put in 1 entry with empty string.
-    IF l_completions_create-prompt[] IS INITIAL.
-      APPEND '' TO l_completions_create-prompt.
+    IF l_chatcompletions_create-messages[] IS INITIAL.
       RETURN.
     ENDIF.
 
-*   Set a default max token count, if not set.
-    IF l_completions_create-max_tokens IS INITIAL.
-      l_completions_create-max_tokens = 16.
-    ENDIF.
-
-*   Set default number of responses as 1, if not set.
-    IF l_completions_create-n IS INITIAL.
-      l_completions_create-n = 1.
-    ENDIF.
-
-*   Set the user info of invoker. This is for mis-use prevention feature available in Azure Open AI.
-    l_completions_create-user = sy-uname.
-
+    l_chatcompletions_create-model = deploymentid.
 
 * Get the actual URL and HTTP communication objects from helper layer.
     _objsdkhelper->get_httpobjs_from_uripattern(
@@ -71,9 +63,8 @@ CLASS zcl_peng_azoai_sdk_v1_complet IMPLEMENTATION.
         uri_pattern            = _objconfig->get_accesspoint_provider( )->get_urltemplate(
                                                                                             component = _component_type
                                                                                             operation = zif_peng_azoai_sdk_constants=>c_component_operations-create
-                                                                                         )   "{endpoint}/openai/deployments/{deployment-id}/completions?api-version={version}'
+                                                                                         )   "{endpoint}/openai/deployments/{deployment-id}/chat/completions?api-version={version}'
         ivobj_config           = _objconfig
-        ivt_templatecomponents = VALUE #(  ( name = zif_peng_azoai_sdk_uripatterns=>template_ids-deploymentid value = deploymentid ) ) "Deployment ID.
       IMPORTING
         ov_url                 = DATA(actual_url)
         ovobj_http             = DATA(lo_http)
@@ -83,7 +74,7 @@ CLASS zcl_peng_azoai_sdk_v1_complet IMPLEMENTATION.
 *   Prepare the body and set it
     DATA(lo_request) = lo_http_rest->if_rest_client~create_request_entity( ).
     lo_request->set_content_type( iv_media_type = 'application/json' ).
-    DATA(post_data) = to_lower( /ui2/cl_json=>serialize( data = l_completions_create ) ) .
+    DATA(post_data) = to_lower( /ui2/cl_json=>serialize( data = l_chatcompletions_create compress = /ui2/cl_json=>c_bool-true ) ) .
     lo_request->set_string_data( iv_data = post_data ).
 
 *   Trigger the network operation.

@@ -3,9 +3,9 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <VSEOCLASS>
-    <CLSNAME>ZCL_PENG_URL_TEMPLATE_PROVIDER</CLSNAME>
+    <CLSNAME>ZCL_PENG_OAI_SDK_V1_CHATCOMPL</CLSNAME>
     <LANGU>E</LANGU>
-    <DESCRIPT>MSPENG:AZOAISDK URL Template Provider (INTERNAL USE ONLY)</DESCRIPT>
+    <DESCRIPT>MSPENG:Azure OpenAI ABAP SDK Completions Component</DESCRIPT>
     <STATE>1</STATE>
     <CLSCCINCL>X</CLSCCINCL>
     <FIXPT>X</FIXPT>

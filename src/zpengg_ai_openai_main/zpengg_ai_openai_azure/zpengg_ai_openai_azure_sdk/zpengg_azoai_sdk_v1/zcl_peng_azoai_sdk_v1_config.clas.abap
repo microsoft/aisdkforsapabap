@@ -110,6 +110,18 @@ CLASS zcl_peng_azoai_sdk_v1_config IMPLEMENTATION.
 *-------------------------------------------------------------------------------------------------------------
 * Apr 6, 2023 // Gopal Nair // Initial Version
 *****************************************************************************************************************
+
+    super->zif_peng_azoai_sdk_config~initialize_config(
+      EXPORTING
+        api_version = api_version           " API Version
+        api_base    = api_base              " API Base
+        api_type    = api_type              " API Type
+        api_key     = api_key               " API Key
+        sdkprofile  = sdkprofile            " SDK Profile ID as provided by organization SDK administrator
+        init_params = init_params           " Additional parameters as specified by organization policies
+    ).
+
+
 *   Load supported versions.
     _load_supported_versions( ).
 
@@ -117,10 +129,11 @@ CLASS zcl_peng_azoai_sdk_v1_config IMPLEMENTATION.
     _load_supported_authstrategies( ).
 
 *   Set the working Parameters.
-    _set_api_version( api_version = api_version ).
-    _set_api_base( api_base = api_base ).
     _api_type = api_type.
     _api_key  = api_key.
+    _set_api_version( api_version = api_version ).
+    _set_api_base( api_base = api_base ).
+
 
 *   Set authentication strategy.
     _set_authentication( api_type = api_type api_key = api_key ).
@@ -202,6 +215,10 @@ CLASS zcl_peng_azoai_sdk_v1_config IMPLEMENTATION.
                                             version_id                  = zif_peng_azoai_sdk_constants=>c_versions-v_2023_03_15_preview
                                             version_handler_classname   = 'ZCL_PENG_AZOAI_SDK_V1'
                                         )
+                                        (   version_name                = zif_peng_oai_sdk_constants=>c_versions-v1
+                                            version_id                  = zif_peng_oai_sdk_constants=>c_versions-v1
+                                            version_handler_classname   = 'ZCL_PENG_AZOAI_SDK_V1'
+                                        )
                                    ).
 
 
@@ -235,11 +252,23 @@ CLASS zcl_peng_azoai_sdk_v1_config IMPLEMENTATION.
 *   Check if this is an Azure Open AI resource. If not, reject it.
 *   NOTE : In Version 2.0 and later, this will need to change to include openAI, and later bard..etc.... and not just Azure Open AI.
 *   TODO, TOBRAINSTORM : Should we control this with a flag?
-    IF NOT _api_base CS zif_peng_azoai_sdk_constants=>c_azure_openairesource.
-      RAISE EXCEPTION TYPE zcx_peng_azoai_sdk_exception
-        EXPORTING
-          textid = zcx_peng_azoai_sdk_exception=>invalid_api_base_url.
-    ENDIF.
+    CASE _api_type.
+      WHEN zif_peng_azoai_sdk_constants=>c_apitype-azure OR zif_peng_azoai_sdk_constants=>c_apitype-azure_ad.
+        IF NOT _api_base CS zif_peng_azoai_sdk_constants=>c_azure_openairesource.
+          RAISE EXCEPTION TYPE zcx_peng_azoai_sdk_exception
+            EXPORTING
+              textid = zcx_peng_azoai_sdk_exception=>invalid_api_base_url.
+        ENDIF.
+
+      WHEN zif_peng_azoai_sdk_constants=>c_apitype-openai.
+        IF NOT _api_base CS zif_peng_azoai_sdk_constants=>c_openairesource.
+          RAISE EXCEPTION TYPE zcx_peng_azoai_sdk_exception
+            EXPORTING
+              textid = zcx_peng_azoai_sdk_exception=>invalid_api_base_url.
+        ENDIF.
+
+    ENDCASE.
+
 
 *   We will need to adjust the API Base URL to a standard format of : http://resourcename.openai.azure.com - WITHOUT a final "/"
 *  Check if the provided URL starts with an HTTPS. If not, add it to the front. For now, the only protocol supported is https... but this can change in future.

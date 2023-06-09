@@ -3,7 +3,7 @@
  <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
   <asx:values>
    <PROGDIR>
-    <NAME>ZP_MSAISDKDEMO_DEPLOYMENTS</NAME>
+    <NAME>ZP_MSAISDKDEMO_MODELS_OAI</NAME>
     <SUBC>1</SUBC>
     <RLOAD>E</RLOAD>
     <FIXPT>X</FIXPT>
@@ -12,8 +12,8 @@
    <TPOOL>
     <item>
      <ID>R</ID>
-     <ENTRY>MS AI SDK for SAP : Demo Program for Deployment</ENTRY>
-     <LENGTH>47</LENGTH>
+     <ENTRY>MS AI SDK for SAP : Demo program for Open AI Models</ENTRY>
+     <LENGTH>51</LENGTH>
     </item>
     <item>
      <ID>S</ID>
@@ -23,15 +23,9 @@
     </item>
     <item>
      <ID>S</ID>
-     <KEY>P_MODID</KEY>
-     <ENTRY>Model ID for Deployment</ENTRY>
-     <LENGTH>31</LENGTH>
-    </item>
-    <item>
-     <ID>S</ID>
      <KEY>P_URL</KEY>
-     <ENTRY>Base URL</ENTRY>
-     <LENGTH>16</LENGTH>
+     <ENTRY>Open AI Base URL</ENTRY>
+     <LENGTH>24</LENGTH>
     </item>
     <item>
      <ID>S</ID>

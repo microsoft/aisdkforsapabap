@@ -1,11 +1,10 @@
 *&---------------------------------------------------------------------*
-*& Report zp_aisdkdemo_chatcompl_simple
+*& Report ZP_AISDKDEMO_CHTCMPL_SMPL_OAI
 *&---------------------------------------------------------------------*
 *&
 *&---------------------------------------------------------------------*
-REPORT zp_aisdkdemo_chatcompl_simple.
-
-INCLUDE zp_msaisdkdemo_params_top.  "Common Input Parameters (AI End Point, Version, Key)
+REPORT zp_aisdkdemo_chtcmpl_smpl_oai.
+INCLUDE zp_msaisdkdemo_params_top_oai.  "Common Input Parameters (AI End Point, Version, Key)
 INCLUDE zp_msaisdkdemo_common.      "Common Data Declarations (SDK Instance Object, status Code, Status Reason, Return JSON String, Error )
 
 PARAMETERS:
@@ -23,7 +22,7 @@ START-OF-SELECTION.
       sdk_instance = zcl_peng_azoai_sdk_factory=>get_instance( )->get_sdk(
                                                             api_version = p_ver
                                                             api_base    = p_url
-                                                            api_type    = zif_peng_azoai_sdk_constants=>c_apitype-azure
+                                                            api_type    = zif_peng_azoai_sdk_constants=>c_apitype-openai
                                                             api_key     = p_key
                                                           ).
 
@@ -57,4 +56,5 @@ START-OF-SELECTION.
 
     CATCH cx_root.
       MESSAGE |An error occured - perhaps the model name is incorrect? Or Access key is incorrect?| TYPE 'I'.
+
   ENDTRY.

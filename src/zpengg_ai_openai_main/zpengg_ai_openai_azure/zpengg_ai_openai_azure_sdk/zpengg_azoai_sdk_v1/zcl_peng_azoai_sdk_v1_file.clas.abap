@@ -51,7 +51,10 @@ CLASS zcl_peng_azoai_sdk_v1_file IMPLEMENTATION.
 * Get the actual URL and HTTP communication objects from helper layer.
     _objsdkhelper->get_httpobjs_from_uripattern(
       EXPORTING
-        uri_pattern            = zif_peng_azoai_sdk_uripatterns=>version_20221201_endpoint-files-delete  "'{endpoint}/openai/files/{file-id}?api-version={version}'
+        uri_pattern            = _objconfig->get_accesspoint_provider( )->get_urltemplate(
+                                                                                            component = _component_type
+                                                                                            operation = zif_peng_azoai_sdk_constants=>c_component_operations-delete
+                                                                                         )   "'{endpoint}/openai/files/{file-id}?api-version={version}'
         ivobj_config           = _objconfig
         ivt_templatecomponents = VALUE #(  ( name = zif_peng_azoai_sdk_uripatterns=>template_ids-fileid value = fileid  ) ) "File ID.
       IMPORTING
@@ -107,7 +110,10 @@ CLASS zcl_peng_azoai_sdk_v1_file IMPLEMENTATION.
 * Get the actual URL and HTTP communication objects from helper layer.
     _objsdkhelper->get_httpobjs_from_uripattern(
       EXPORTING
-        uri_pattern            = zif_peng_azoai_sdk_uripatterns=>version_20221201_endpoint-files-get  "'{endpoint}/openai/files/{file-id}?api-version={version}'
+        uri_pattern            = _objconfig->get_accesspoint_provider( )->get_urltemplate(
+                                                                                            component = _component_type
+                                                                                            operation = zif_peng_azoai_sdk_constants=>c_component_operations-get
+                                                                                         )   "'{endpoint}/openai/files/{file-id}?api-version={version}'
         ivobj_config           = _objconfig
         ivt_templatecomponents = VALUE #(  ( name = zif_peng_azoai_sdk_uripatterns=>template_ids-fileid value = fileid  ) ) "File ID.
       IMPORTING
@@ -165,7 +171,10 @@ CLASS zcl_peng_azoai_sdk_v1_file IMPLEMENTATION.
 * Get the actual URL and HTTP communication objects from helper layer.
     _objsdkhelper->get_httpobjs_from_uripattern(
       EXPORTING
-        uri_pattern            = zif_peng_azoai_sdk_uripatterns=>version_20221201_endpoint-files-get_content  "'{endpoint}/openai/files/{file-id}/content?api-version={version}'
+        uri_pattern            = _objconfig->get_accesspoint_provider( )->get_urltemplate(
+                                                                                            component = _component_type
+                                                                                            operation = zif_peng_azoai_sdk_constants=>c_component_operations-get_content
+                                                                                         )   "'{endpoint}/openai/files/{file-id}/content?api-version={version}'
         ivobj_config           = _objconfig
         ivt_templatecomponents = VALUE #(  ( name = zif_peng_azoai_sdk_uripatterns=>template_ids-fileid value = fileid  ) ) "File ID.
       IMPORTING
@@ -227,7 +236,10 @@ CLASS zcl_peng_azoai_sdk_v1_file IMPLEMENTATION.
 * Get the actual URL and HTTP communication objects from helper layer.
     _objsdkhelper->get_httpobjs_from_uripattern(
       EXPORTING
-        uri_pattern            = zif_peng_azoai_sdk_uripatterns=>version_20221201_endpoint-files-import  "'{endpoint}/openai/files/import?api-version={version}'
+        uri_pattern            = _objconfig->get_accesspoint_provider( )->get_urltemplate(
+                                                                                            component = _component_type
+                                                                                            operation = zif_peng_azoai_sdk_constants=>c_component_operations-import
+                                                                                         )   "'{endpoint}/openai/files/import?api-version={version}'
         ivobj_config           = _objconfig
       IMPORTING
         ov_url                 = DATA(actual_url)
@@ -291,7 +303,10 @@ CLASS zcl_peng_azoai_sdk_v1_file IMPLEMENTATION.
 * Get the actual URL and HTTP communication objects from helper layer.
     _objsdkhelper->get_httpobjs_from_uripattern(
       EXPORTING
-        uri_pattern            = zif_peng_azoai_sdk_uripatterns=>version_20221201_endpoint-files-list  "'{endpoint}/openai/files?api-version={version}'
+        uri_pattern            = _objconfig->get_accesspoint_provider( )->get_urltemplate(
+                                                                                            component = _component_type
+                                                                                            operation = zif_peng_azoai_sdk_constants=>c_component_operations-list
+                                                                                         )   "'{endpoint}/openai/files?api-version={version}'
         ivobj_config           = _objconfig
       IMPORTING
         ov_url                 = DATA(actual_url)
@@ -348,7 +363,10 @@ CLASS zcl_peng_azoai_sdk_v1_file IMPLEMENTATION.
 * Get the actual URL and HTTP communication objects from helper layer.
     _objsdkhelper->get_httpobjs_from_uripattern(
       EXPORTING
-        uri_pattern            = zif_peng_azoai_sdk_uripatterns=>version_20221201_endpoint-files-upload  "'{endpoint}/openai/files?api-version={version}'
+        uri_pattern            = _objconfig->get_accesspoint_provider( )->get_urltemplate(
+                                                                                            component = _component_type
+                                                                                            operation = zif_peng_azoai_sdk_constants=>c_component_operations-upload
+                                                                                         )
         ivobj_config           = _objconfig
       IMPORTING
         ov_url                 = DATA(actual_url)

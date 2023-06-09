@@ -12,6 +12,11 @@
    </VSEOINTERF>
    <DESCRIPTIONS>
     <SEOCOMPOTX>
+     <CMPNAME>GET_ACCESSPOINT_PROVIDER</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Gets the provider for access points</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
      <CMPNAME>GET_ALL_PARAMETERS</CMPNAME>
      <LANGU>E</LANGU>
      <DESCRIPT>Get all parameters for this working instance</DESCRIPT>

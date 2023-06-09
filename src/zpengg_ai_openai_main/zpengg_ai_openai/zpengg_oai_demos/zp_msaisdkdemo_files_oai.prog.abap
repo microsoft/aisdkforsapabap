@@ -1,14 +1,12 @@
 *&---------------------------------------------------------------------*
-*& Report  ZP_MSAISDKDEMO_FILES
-*&
+*& Report ZP_MSAISDKDEMO_FILES_OAI
 *&---------------------------------------------------------------------*
 *&
-*&
 *&---------------------------------------------------------------------*
-REPORT zp_msaisdkdemo_files.
-
-INCLUDE zp_msaisdkdemo_params_top.  "Common Input Parameters (AI End Point, Version, Key)
+REPORT zp_msaisdkdemo_files_oai.
+INCLUDE zp_msaisdkdemo_params_top_oai.  "Common Input Parameters (AI End Point, Version, Key)
 INCLUDE zp_msaisdkdemo_common.      "Common Data Declarations (SDK Instance Object, status Code, Status Reason, Return JSON String, Error )
+
 
 DATA:
   upload_data        TYPE zif_peng_azoai_sdk_types=>tty_file_upload,
@@ -27,7 +25,7 @@ START-OF-SELECTION.
       sdk_instance = zcl_peng_azoai_sdk_factory=>get_instance( )->get_sdk(
                                                             api_version = p_ver
                                                             api_base    = p_url
-                                                            api_type    = zif_peng_azoai_sdk_constants=>c_apitype-azure
+                                                            api_type    = zif_peng_azoai_sdk_constants=>c_apitype-openai
                                                             api_key     = p_key
                                                           ).
 
@@ -60,31 +58,6 @@ START-OF-SELECTION.
 ********************************************************************************
       BREAK-POINT.
 
-************************** Creating a New File through Import ******************
-* File - Import
-* Import is different from upload, in the sense, we specify location of a JSONL file
-* that is available somewhere, and accessible. In the below example, the location of
-* file "puppy.jsonl" is specified. NOTE: This file operation will fail, since such a
-* file does not exist. After the import call, you will notice this when looking at
-* file section in Portal.
-
-* Import a File.
-      import_location-content_url = 'https://www.contoso.com/trainingdata/puppy.jsonl'. "NOTE : This file really does not exist.
-      import_location-filename = 'Demo_File_Import.jsonl'.
-      sdk_instance->files( )->import(
-        EXPORTING
-          import_info  = import_location
-        IMPORTING
-          statuscode   = status_code                  " Status Code
-          statusreason = status_reason                " HTTP status description
-          json         = returnjson                   " JSON String returned from AI Resource
-          file         = imported_file_info           " ABAP Ready Imported File Information
-          error        = error                        " ABAP Ready error details
-      ).
-
-
-********************************************************************************
-      BREAK-POINT.
 
 ************************** List All Files  *************************************
 * File - List
