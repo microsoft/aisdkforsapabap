@@ -34,6 +34,7 @@ INTERFACE zif_peng_azoai_sdk_types
       lifecycle_status TYPE string,
       model            TYPE string,
       object           TYPE string,
+      owned_by         type string,
       status           TYPE string,
       updated_at       TYPE i,
     END OF ty_model_get,

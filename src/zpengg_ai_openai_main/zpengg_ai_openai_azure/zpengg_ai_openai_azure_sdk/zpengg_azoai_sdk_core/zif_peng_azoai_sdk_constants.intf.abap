@@ -49,6 +49,7 @@ INTERFACE zif_peng_azoai_sdk_constants
 
 *   open AI resource identifier.
     c_azure_openairesource TYPE string VALUE '.openai.azure.com',
+    c_openairesource       type string value 'api.openai.com',
 
 *   File purpose.
     BEGIN OF c_filepurpose,
@@ -88,7 +89,8 @@ INTERFACE zif_peng_azoai_sdk_constants
     c_sdk_default_profile_name TYPE zde_azoaisdk_profileid VALUE 'DEFAULT',
 
     BEGIN OF c_urltemplateproviders,
-      c_azureopenai TYPE string VALUE 'zcl_peng_azoai_urlprovider',
+      azureopenai TYPE string VALUE 'zcl_peng_azoai_urlprovider',
+      openai      type string value 'zcl_peng_oai_urlprovider',
     END OF c_urltemplateproviders,
 
     BEGIN OF c_chatcompletion_role,

@@ -52,7 +52,6 @@ CLASS zcl_peng_azoai_urlprovider IMPLEMENTATION.
 
   METHOD _loadendpoints.
     REFRESH _t_endpoint_dictionary.
-    break gonair.
     _t_endpoint_dictionary = VALUE #(
                                       version = _version
 

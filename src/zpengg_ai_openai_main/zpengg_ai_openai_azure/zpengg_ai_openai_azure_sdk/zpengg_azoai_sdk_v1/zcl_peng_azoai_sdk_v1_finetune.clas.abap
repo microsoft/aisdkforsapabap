@@ -19,7 +19,9 @@ ENDCLASS.
 
 
 
-CLASS zcl_peng_azoai_sdk_v1_finetune IMPLEMENTATION.
+CLASS ZCL_PENG_AZOAI_SDK_V1_FINETUNE IMPLEMENTATION.
+
+
   METHOD zif_peng_azoai_sdk_comp_fintun~cancel.
 *****************************************************************************************************************
 * Class          : ZCL_PENG_AZOAI_SDK_V1_FINETUNE
@@ -83,6 +85,7 @@ CLASS zcl_peng_azoai_sdk_v1_finetune IMPLEMENTATION.
     ).
   ENDMETHOD.
 
+
   METHOD zif_peng_azoai_sdk_comp_fintun~create.
 *****************************************************************************************************************
 * Class          : ZCL_PENG_AZOAI_SDK_V1_FINETUNE
@@ -126,7 +129,8 @@ CLASS zcl_peng_azoai_sdk_v1_finetune IMPLEMENTATION.
 *   Prepare the body and set it
     DATA(lo_request) = lo_http_rest->if_rest_client~create_request_entity( ).
     lo_request->set_content_type( iv_media_type = 'application/json' ).
-    DATA(post_data) = to_lower( /ui2/cl_json=>serialize( data = finetune_create compress = /ui2/cl_json=>c_bool-true ) ) .
+
+    DATA(post_data) = /ui2/cl_json=>serialize( data = finetune_create compress = /ui2/cl_json=>c_bool-true pretty_name = /ui2/cl_json=>pretty_mode-low_case ).
     lo_request->set_string_data( iv_data = post_data ).
 
 *   Trigger the network operation.
@@ -147,6 +151,7 @@ CLASS zcl_peng_azoai_sdk_v1_finetune IMPLEMENTATION.
     ).
 
   ENDMETHOD.
+
 
   METHOD zif_peng_azoai_sdk_comp_fintun~delete.
 *****************************************************************************************************************
@@ -207,6 +212,7 @@ CLASS zcl_peng_azoai_sdk_v1_finetune IMPLEMENTATION.
     ).
   ENDMETHOD.
 
+
   METHOD zif_peng_azoai_sdk_comp_fintun~get.
 *****************************************************************************************************************
 * Class          : ZCL_PENG_AZOAI_SDK_V1_FINETUNE
@@ -266,6 +272,7 @@ CLASS zcl_peng_azoai_sdk_v1_finetune IMPLEMENTATION.
     ).
   ENDMETHOD.
 
+
   METHOD zif_peng_azoai_sdk_comp_fintun~get_events.
 *****************************************************************************************************************
 * Class          : ZCL_PENG_AZOAI_SDK_V1_FINETUNE
@@ -322,6 +329,7 @@ CLASS zcl_peng_azoai_sdk_v1_finetune IMPLEMENTATION.
         iov_error         = error
     ).
   ENDMETHOD.
+
 
   METHOD zif_peng_azoai_sdk_comp_fintun~list.
 *****************************************************************************************************************
@@ -380,5 +388,4 @@ CLASS zcl_peng_azoai_sdk_v1_finetune IMPLEMENTATION.
         iov_error         = error
     ).
   ENDMETHOD.
-
 ENDCLASS.

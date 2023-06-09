@@ -366,7 +366,7 @@ CLASS zcl_peng_azoai_sdk_v1_file IMPLEMENTATION.
         uri_pattern            = _objconfig->get_accesspoint_provider( )->get_urltemplate(
                                                                                             component = _component_type
                                                                                             operation = zif_peng_azoai_sdk_constants=>c_component_operations-upload
-                                                                                         )   "'{endpoint}/openai/files?api-version={version}'
+                                                                                         )
         ivobj_config           = _objconfig
       IMPORTING
         ov_url                 = DATA(actual_url)

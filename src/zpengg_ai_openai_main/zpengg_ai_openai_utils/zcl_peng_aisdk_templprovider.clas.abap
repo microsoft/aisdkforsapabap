@@ -80,8 +80,10 @@ CLASS zcl_peng_aisdk_templprovider IMPLEMENTATION.
     CASE _apitype.
         "Azure Open AI
       WHEN zif_peng_azoai_sdk_constants=>c_apitype-azure OR zif_peng_azoai_sdk_constants=>c_apitype-azure_ad.
-        _providerclassname = to_upper( zif_peng_azoai_sdk_constants=>c_urltemplateproviders-c_azureopenai ).
+        _providerclassname = to_upper( zif_peng_azoai_sdk_constants=>c_urltemplateproviders-azureopenai ).
 
+      WHEN  zif_peng_azoai_sdk_constants=>c_apitype-openai.
+        _providerclassname = to_upper( zif_peng_azoai_sdk_constants=>c_urltemplateproviders-openai ).
 
       WHEN OTHERS.
         RAISE EXCEPTION TYPE zcx_peng_azoai_sdk_exception
