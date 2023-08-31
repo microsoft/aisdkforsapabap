@@ -46,10 +46,10 @@ CLASS zcl_peng_azoai_sdk_v1_complet IMPLEMENTATION.
     l_completions_create = prompts.
 
 *   If there are no prompts entered by the user, then put in 1 entry with empty string.
-    IF l_completions_create-prompt[] IS INITIAL.
-      APPEND '' TO l_completions_create-prompt.
-      RETURN.
-    ENDIF.
+*    IF l_completions_create-prompt[] IS INITIAL.
+*      APPEND '' TO l_completions_create-prompt.
+*      RETURN.
+*    ENDIF.
 
 *   Set a default max token count, if not set.
     IF l_completions_create-max_tokens IS INITIAL.
@@ -79,7 +79,7 @@ CLASS zcl_peng_azoai_sdk_v1_complet IMPLEMENTATION.
         ovobj_http             = DATA(lo_http)
         ovobj_http_rest        = DATA(lo_http_rest)
     ).
-
+break-point.
 *   Prepare the body and set it
     DATA(lo_request) = lo_http_rest->if_rest_client~create_request_entity( ).
     lo_request->set_content_type( iv_media_type = 'application/json' ).

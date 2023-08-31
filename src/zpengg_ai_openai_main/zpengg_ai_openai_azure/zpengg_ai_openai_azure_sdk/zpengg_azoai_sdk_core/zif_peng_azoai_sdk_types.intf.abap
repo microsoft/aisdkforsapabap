@@ -34,7 +34,7 @@ INTERFACE zif_peng_azoai_sdk_types
       lifecycle_status TYPE string,
       model            TYPE string,
       object           TYPE string,
-      owned_by         type string,
+      owned_by         TYPE string,
       status           TYPE string,
       updated_at       TYPE i,
     END OF ty_model_get,
@@ -84,10 +84,11 @@ INTERFACE zif_peng_azoai_sdk_types
 *********   Completions operation data types ************
   TYPES:
     BEGIN OF ty_completion_input,
-      prompt     TYPE stringtab,
-      max_tokens TYPE i,
-      user       TYPE string,
-      n          TYPE i,
+      prompt      TYPE stringtab,
+      max_tokens  TYPE i,
+      user        TYPE string,
+      n           TYPE i,
+      temperature TYPE p LENGTH 3 DECIMALS 2,
     END OF ty_completion_input,
 
     BEGIN OF ty_completion_output,
