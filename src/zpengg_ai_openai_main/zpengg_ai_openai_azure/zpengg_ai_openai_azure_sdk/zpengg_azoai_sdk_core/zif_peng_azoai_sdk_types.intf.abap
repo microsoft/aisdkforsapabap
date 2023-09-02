@@ -84,11 +84,16 @@ INTERFACE zif_peng_azoai_sdk_types
 *********   Completions operation data types ************
   TYPES:
     BEGIN OF ty_completion_input,
-      prompt      TYPE stringtab,
-      max_tokens  TYPE i,
-      user        TYPE string,
-      n           TYPE i,
-      temperature TYPE p LENGTH 3 DECIMALS 2,
+      prompt            TYPE stringtab,                "Completion Prompts
+      max_tokens        TYPE i,                         "Maximum number of tokens permitted - includes both the prompt, and the response.
+      user              TYPE string,                    "A unique identifier for user - to potentially prevent misuse.
+      n                 TYPE i,                         "Number of responses.
+      temperature       TYPE p LENGTH 3 DECIMALS 2,     "Temperature - Controls randomness.
+      top_p             TYPE p LENGTH 3 DECIMALS 2,     "Top probabilities  - Controls randomness.
+      stop              TYPE stringtab,                 "Make responses stop at a desired point, such as the end of a sentence or list
+      frequency_penalty TYPE p LENGTH 3 DECIMALS 2,     "Reduce the chance of repeating a token proportionally based on how often it has appeared in the text so far
+      presence_penalty  TYPE p LENGTH 3 DECIMALS 2,     "Reduce the chance of repeating any token that has appeared in the text at all so far
+      best_of           TYPE i,                         "Generate multiple responses, and display only the one with the best total probability across all its tokens.
     END OF ty_completion_input,
 
     BEGIN OF ty_completion_output,
