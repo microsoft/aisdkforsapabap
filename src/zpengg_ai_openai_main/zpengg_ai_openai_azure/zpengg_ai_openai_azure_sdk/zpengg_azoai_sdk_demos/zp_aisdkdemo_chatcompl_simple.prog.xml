@@ -16,6 +16,30 @@
      <ENTRY>MSPENG: AI SDK Demo programs - Chat Completions - Simple</ENTRY>
      <LENGTH>56</LENGTH>
     </item>
+    <item>
+     <ID>S</ID>
+     <KEY>P_DEPID</KEY>
+     <ENTRY>Deployment ID</ENTRY>
+     <LENGTH>21</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>P_KEY</KEY>
+     <ENTRY>Key</ENTRY>
+     <LENGTH>11</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>P_URL</KEY>
+     <ENTRY>Azure Open AI Base URL</ENTRY>
+     <LENGTH>30</LENGTH>
+    </item>
+    <item>
+     <ID>S</ID>
+     <KEY>P_VER</KEY>
+     <ENTRY>Version</ENTRY>
+     <LENGTH>15</LENGTH>
+    </item>
    </TPOOL>
   </asx:values>
  </asx:abap>

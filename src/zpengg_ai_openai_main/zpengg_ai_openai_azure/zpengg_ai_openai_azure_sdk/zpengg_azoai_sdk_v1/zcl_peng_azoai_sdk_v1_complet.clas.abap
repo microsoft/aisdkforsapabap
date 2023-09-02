@@ -79,7 +79,7 @@ CLASS zcl_peng_azoai_sdk_v1_complet IMPLEMENTATION.
         ovobj_http             = DATA(lo_http)
         ovobj_http_rest        = DATA(lo_http_rest)
     ).
-break-point.
+
 *   Prepare the body and set it
     DATA(lo_request) = lo_http_rest->if_rest_client~create_request_entity( ).
     lo_request->set_content_type( iv_media_type = 'application/json' ).
