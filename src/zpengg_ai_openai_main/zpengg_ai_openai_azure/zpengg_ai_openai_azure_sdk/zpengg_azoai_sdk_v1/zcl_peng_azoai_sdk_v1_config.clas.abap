@@ -215,6 +215,10 @@ CLASS zcl_peng_azoai_sdk_v1_config IMPLEMENTATION.
                                             version_id                  = zif_peng_azoai_sdk_constants=>c_versions-v_2023_03_15_preview
                                             version_handler_classname   = 'ZCL_PENG_AZOAI_SDK_V1'
                                         )
+                                        (   version_name                = zif_peng_azoai_sdk_constants=>c_versions-v_2023_05_15
+                                            version_id                  = zif_peng_azoai_sdk_constants=>c_versions-v_2023_05_15
+                                            version_handler_classname   = 'ZCL_PENG_AZOAI_SDK_V1'
+                                        )
                                         (   version_name                = zif_peng_oai_sdk_constants=>c_versions-v1
                                             version_id                  = zif_peng_oai_sdk_constants=>c_versions-v1
                                             version_handler_classname   = 'ZCL_PENG_AZOAI_SDK_V1'

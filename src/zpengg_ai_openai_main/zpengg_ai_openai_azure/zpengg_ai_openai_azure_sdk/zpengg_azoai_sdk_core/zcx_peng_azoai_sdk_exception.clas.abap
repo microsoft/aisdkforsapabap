@@ -5,8 +5,8 @@ class ZCX_PENG_AZOAI_SDK_EXCEPTION definition
 
 public section.
 
-  interfaces IF_T100_DYN_MSG .
   interfaces IF_T100_MESSAGE .
+  interfaces IF_T100_DYN_MSG .
 
   constants:
     begin of VERSION_NOT_SUPPORTED,
@@ -89,6 +89,15 @@ public section.
       attr3 type scx_attrname value '',
       attr4 type scx_attrname value '',
     end of COMPONENT_USE_NOT_PERMITTED .
+  constants:
+    begin of NOT_IMPL_FOR_VERSION,
+      msgid type symsgid value 'ZMSPENG_AZOAISDK_MSG',
+      msgno type symsgno value '009',
+      attr1 type scx_attrname value 'IV_ATTR1',
+      attr2 type scx_attrname value '',
+      attr3 type scx_attrname value '',
+      attr4 type scx_attrname value '',
+    end of NOT_IMPL_FOR_VERSION .
   data IV_ATTR1 type CHAR50 .
   data IV_ATTR2 type CHAR50 .
   data IV_ATTR3 type CHAR50 .
