@@ -312,7 +312,10 @@ CLASS zcl_peng_azoai_sdk_helper IMPLEMENTATION.
                              ).
 
       WHEN
-            zif_peng_azoai_sdk_constants=>c_versions-v_2023_05_15.
+            zif_peng_azoai_sdk_constants=>c_versions-v_2023_05_15 OR
+            zif_peng_azoai_sdk_constants=>c_versions-v_2023_06_01_preview OR
+            zif_peng_azoai_sdk_constants=>c_versions-v_2023_07_01_preview OR
+            zif_peng_azoai_sdk_constants=>c_versions-v_2023_08_01_preview.
 
         components = VALUE #(
                                "SDK Core Component

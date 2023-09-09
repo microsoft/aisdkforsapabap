@@ -69,7 +69,6 @@ CLASS zcl_peng_azoai_sdk_v1 IMPLEMENTATION.
                              api_version = _objconfig->get_apiversion(  )
                              filter      =  zif_peng_azoai_sdk_constants=>c_component_classification-submodule
                            ).
-        BREAK-POINT.
 
 *       Initialize each sub-component, and store it away, along with its identifier.
         LOOP AT _t_subcomponents ASSIGNING FIELD-SYMBOL(<fs_subcomponent>).
