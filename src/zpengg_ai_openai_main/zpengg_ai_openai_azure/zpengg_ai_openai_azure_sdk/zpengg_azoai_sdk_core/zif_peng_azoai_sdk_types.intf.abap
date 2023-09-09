@@ -34,7 +34,7 @@ INTERFACE zif_peng_azoai_sdk_types
       lifecycle_status TYPE string,
       model            TYPE string,
       object           TYPE string,
-      owned_by         type string,
+      owned_by         TYPE string,
       status           TYPE string,
       updated_at       TYPE i,
     END OF ty_model_get,
@@ -84,10 +84,16 @@ INTERFACE zif_peng_azoai_sdk_types
 *********   Completions operation data types ************
   TYPES:
     BEGIN OF ty_completion_input,
-      prompt     TYPE stringtab,
-      max_tokens TYPE i,
-      user       TYPE string,
-      n          TYPE i,
+      prompt            TYPE stringtab,                "Completion Prompts
+      max_tokens        TYPE i,                         "Maximum number of tokens permitted - includes both the prompt, and the response.
+      user              TYPE string,                    "A unique identifier for user - to potentially prevent misuse.
+      n                 TYPE i,                         "Number of responses.
+      temperature       TYPE p LENGTH 3 DECIMALS 2,     "Temperature - Controls randomness.
+      top_p             TYPE p LENGTH 3 DECIMALS 2,     "Top probabilities  - Controls randomness.
+      stop              TYPE stringtab,                 "Make responses stop at a desired point, such as the end of a sentence or list
+      frequency_penalty TYPE p LENGTH 3 DECIMALS 2,     "Reduce the chance of repeating a token proportionally based on how often it has appeared in the text so far
+      presence_penalty  TYPE p LENGTH 3 DECIMALS 2,     "Reduce the chance of repeating any token that has appeared in the text at all so far
+      best_of           TYPE i,                         "Generate multiple responses, and display only the one with the best total probability across all its tokens.
     END OF ty_completion_input,
 
     BEGIN OF ty_completion_output,
@@ -110,10 +116,15 @@ INTERFACE zif_peng_azoai_sdk_types
     tty_chatcompletion_messages TYPE STANDARD TABLE OF ty_chatcompletion_message WITH DEFAULT KEY,
 
     BEGIN OF ty_chatcompletion_input,
-      messages   TYPE zif_peng_azoai_sdk_types=>tty_chatcompletion_messages,
-      max_tokens TYPE i,
-      user       TYPE string,       "A unique identifier representing your end-user, which can help Azure OpenAI to monitor and detect abuse.
-      n          TYPE i,            "How many chat completion choices to generate for each input message
+      messages          TYPE zif_peng_azoai_sdk_types=>tty_chatcompletion_messages,
+      max_tokens        TYPE i,
+      user              TYPE string,                    "A unique identifier representing your end-user, which can help Azure OpenAI to monitor and detect abuse.
+      n                 TYPE i,                         "How many chat completion choices to generate for each input message
+      temperature       TYPE p LENGTH 3 DECIMALS 2,     "Temperature - Controls randomness.
+      top_p             TYPE p LENGTH 3 DECIMALS 2,     "Top probabilities  - Controls randomness.
+      stop              TYPE stringtab,                 "Make responses stop at a desired point, such as the end of a sentence or list
+      frequency_penalty TYPE p LENGTH 3 DECIMALS 2,     "Reduce the chance of repeating a token proportionally based on how often it has appeared in the text so far
+      presence_penalty  TYPE p LENGTH 3 DECIMALS 2,     "Reduce the chance of repeating any token that has appeared in the text at all so far
     END OF ty_chatcompletion_input,
 
     BEGIN OF ty_chatcompletion_output,

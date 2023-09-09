@@ -172,14 +172,20 @@ CLASS zcl_peng_azoai_sdk_base IMPLEMENTATION.
 *                       Modification History
 *-------------------------------------------------------------------------------------------------------------
 * Apr 5, 2023 // Gopal Nair // Initial Version
+* Sep 7, 2023 // Gopal Nair // Adjusted message emitted during safety check.
 *****************************************************************************************************************
+
+*   If the component line does not exist (which is from config layer), then, the component use is not permitted
+*   due to version or environment restriction. Issue an appropriate exception.
     IF NOT line_exists( _t_subcomponents[ component_type = component_type ] ).
       RAISE EXCEPTION TYPE zcx_peng_azoai_sdk_exception
         EXPORTING
-          textid   = zcx_peng_azoai_sdk_exception=>component_use_not_permitted
+          textid   = zcx_peng_azoai_sdk_exception=>not_impl_for_version
           iv_attr1 = |{ component_type }|.
     ENDIF.
 
+*   If the component line exists, BUT, an instance does not exist, then it is because the component use is not
+*   permitted due to enterprise control. Issue an appropriate exception here.
     IF _t_subcomponents[ component_type = component_type ]-component_instance IS INITIAL.
       RAISE EXCEPTION TYPE zcx_peng_azoai_sdk_exception
         EXPORTING

@@ -62,6 +62,12 @@
      <MSGNR>008</MSGNR>
      <TEXT>&amp; Usage not permitted through run profile. Contact SDK Administrator.</TEXT>
     </T100>
+    <T100>
+     <SPRSL>E</SPRSL>
+     <ARBGB>ZMSPENG_AZOAISDK_MSG</ARBGB>
+     <MSGNR>009</MSGNR>
+     <TEXT>&amp; Usage not valid for version.</TEXT>
+    </T100>
    </T100>
   </asx:values>
  </asx:abap>

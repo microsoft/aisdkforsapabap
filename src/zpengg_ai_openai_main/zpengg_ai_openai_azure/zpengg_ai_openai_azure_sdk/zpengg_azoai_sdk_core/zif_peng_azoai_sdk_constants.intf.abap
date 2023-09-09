@@ -8,6 +8,10 @@ INTERFACE zif_peng_azoai_sdk_constants
     BEGIN OF c_versions,
       v_2022_12_01         TYPE string VALUE '2022-12-01',
       v_2023_03_15_preview TYPE string VALUE '2023-03-15-preview',
+      v_2023_05_15         TYPE string VALUE '2023-05-15',
+      v_2023_06_01_preview TYPE string VALUE '2023-06-01-preview',
+      v_2023_07_01_preview TYPE string VALUE '2023-07-01-preview',
+      v_2023_08_01_preview TYPE string VALUE '2023-08-01-preview',
     END OF c_versions,
 
 
@@ -49,7 +53,7 @@ INTERFACE zif_peng_azoai_sdk_constants
 
 *   open AI resource identifier.
     c_azure_openairesource TYPE string VALUE '.openai.azure.com',
-    c_openairesource       type string value 'api.openai.com',
+    c_openairesource       TYPE string VALUE 'api.openai.com',
 
 *   File purpose.
     BEGIN OF c_filepurpose,
@@ -90,7 +94,7 @@ INTERFACE zif_peng_azoai_sdk_constants
 
     BEGIN OF c_urltemplateproviders,
       azureopenai TYPE string VALUE 'zcl_peng_azoai_urlprovider',
-      openai      type string value 'zcl_peng_oai_urlprovider',
+      openai      TYPE string VALUE 'zcl_peng_oai_urlprovider',
     END OF c_urltemplateproviders,
 
     BEGIN OF c_chatcompletion_role,
