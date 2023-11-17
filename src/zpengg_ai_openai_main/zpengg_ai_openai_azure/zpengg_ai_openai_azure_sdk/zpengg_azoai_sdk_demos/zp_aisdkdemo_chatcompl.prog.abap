@@ -117,7 +117,7 @@ module pai input.
       ).
 *   cl_demo_output=>display_html( html = chatcompl_output-choices[ 1 ]-message-content ).
 
-    when 'ECAN' or 'ENDE'.
+    when OTHERS."'ECAN' or 'ENDE'.
       leave program.
 
   endcase.
